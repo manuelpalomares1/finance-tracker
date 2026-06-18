@@ -8,10 +8,14 @@ module.exports = async function handler(req, res) {
   const token = process.env.GITHUB_TOKEN;
   if (!token) return res.status(500).json({ error: 'GITHUB_TOKEN not set' });
 
-  const owner = 'manuelpalomares1';
-  const repo = 'finance-tracker';
-  const path = 'data.json';
-  const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  // Parse body manually since Vercel doesn't auto-parse
+  let body = req.body;
+  if (typeof body === 'string') {
+    try { body = JSON.parse(body); } catch(e) { return res.status(400).json({ error: 'Invalid JSON' }); }
+  }
+  if (!body || !body.expenses) return res.status(400).json({ error: 'Missing data', received: typeof body });
+
+  const apiUrl = 'https://api.github.com/repos/manuelpalomares1/finance-tracker/contents/data.json';
   const headers = {
     'Authorization': `Bearer ${token}`,
     'Accept': 'application/vnd.github+json',
@@ -20,11 +24,13 @@ module.exports = async function handler(req, res) {
   };
 
   const getRes = await fetch(apiUrl, { headers });
-  if (!getRes.ok) return res.status(500).json({ error: 'Could not fetch current file' });
+  if (!getRes.ok) {
+    const err = await getRes.json().catch(() => ({}));
+    return res.status(500).json({ error: 'Could not fetch file', status: getRes.status, detail: err.message });
+  }
   const file = await getRes.json();
 
-  const content = Buffer.from(JSON.stringify(req.body, null, 2)).toString('base64');
-
+  const content = Buffer.from(JSON.stringify(body, null, 2)).toString('base64');
   const putRes = await fetch(apiUrl, {
     method: 'PUT',
     headers,
@@ -32,9 +38,9 @@ module.exports = async function handler(req, res) {
   });
 
   if (!putRes.ok) {
-    const err = await putRes.json();
-    return res.status(500).json({ error: err.message });
+    const err = await putRes.json().catch(() => ({}));
+    return res.status(500).json({ error: 'Could not save file', status: putRes.status, detail: err.message });
   }
 
   res.status(200).json({ ok: true });
-}
+};
