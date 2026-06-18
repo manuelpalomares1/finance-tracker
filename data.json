@@ -61,6 +61,14 @@
       "note": "uber from airport",
       "date": "2026-06-14",
       "seq": 1781749328155
+    },
+    {
+      "id": "1781749350198475",
+      "catId": "food",
+      "amount": 14.41,
+      "note": "nick the greek",
+      "date": "2026-06-15",
+      "seq": 1781749350198
     }
   ],
   "money": {
