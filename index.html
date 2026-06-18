@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#23212A">
+<title>Summer Ledger</title>
+<style>
+  :root{
+    --paper:#F4F1E9; --card:#FBFAF5; --ink:#23212A; --muted:#8B857A;
+    --line:#E4DECF; --line-strong:#D6CFBC;
+    --car:#BD6526; --food:#2E7A57; --trips:#1F7A8C; --subs:#4B57A0;
+    --good:#2E7A57; --over:#B23A3A;
+    --shadow:0 1px 0 #fff inset, 0 2px 14px rgba(35,33,42,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper)}
+  body{padding:24px 16px 60px;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.45}
+  #app{max-width:560px;margin:0 auto}
+  .loading{padding:48px 8px;color:var(--muted);font-style:italic}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+
+  .mast{padding:6px 2px 16px;border-bottom:2px solid var(--ink);margin-bottom:16px}
+  .mast h1{margin:0;font-size:30px;letter-spacing:-.02em;font-weight:800;text-transform:uppercase;line-height:.95}
+  .mast .range{margin-top:6px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+  .section-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;display:flex;justify-content:space-between;align-items:center}
+  .editlink{background:none;border:0;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline;letter-spacing:.04em;text-transform:none}
+
+  .stand{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;padding:16px;box-shadow:var(--shadow);margin-bottom:14px}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .tile{background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px 12px}
+  .tile .k{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .tile .v{font-size:19px;font-weight:700;margin-top:3px}
+  .tile .sub{font-size:10.5px;color:var(--muted);margin-top:1px}
+  .netline{margin-top:12px;font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;align-items:baseline}
+  .netline b{font-weight:700;color:var(--ink)}
+
+  .alloc{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;padding:16px;box-shadow:var(--shadow);margin-bottom:26px}
+  .alloc .pcheck{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+  .alloc .pcheck .v{font-size:22px;font-weight:700}
+  .splitouts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 14px}
+  .splitout{border-radius:11px;padding:11px 12px;border:1px solid var(--line)}
+  .splitout.chase{background:#fbf1ea;border-color:#eed8c6}
+  .splitout.save{background:#eef4ef;border-color:#cfe2d4}
+  .splitout .k{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  .splitout .v{font-size:20px;font-weight:700;margin-top:2px}
+  .splitout .after{font-size:11.5px;color:var(--muted);margin-top:3px}
+  .splitout .after b{color:var(--ink)}
+  .flag{font-weight:700}.flag.ok{color:var(--good)}.flag.bad{color:var(--over)}
+  input[type=range]{width:100%;margin:2px 0 4px;accent-color:var(--ink)}
+  .slabels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:12px}
+  .quick{display:flex;gap:8px;margin-bottom:12px}
+  .quick button{flex:1;border:1.5px solid var(--line-strong);background:#fff;border-radius:10px;padding:9px 6px;font-size:12.5px;font-weight:600;color:var(--ink);cursor:pointer;transition:.15s}
+  .quick button:hover{border-color:var(--ink)}
+  .rationale{font-size:12px;color:var(--muted);line-height:1.5;font-style:italic}
+
+  .topline{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
+  .topline .big{font-size:24px;font-weight:700}
+  .topline .small{font-size:12.5px;color:var(--muted)}
+  .topbar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;display:flex;margin-bottom:16px}
+  .topbar i{display:block;height:100%}
+  .cats{display:grid;gap:10px;margin-bottom:24px}
+  .cat{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:12px 14px;box-shadow:var(--shadow)}
+  .cat .row1{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .cat .name{font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px}
+  .dot{width:10px;height:10px;border-radius:50%;flex:none}
+  .cat .spent{font-size:16px;font-weight:700}
+  .cat .ofbud{color:var(--muted);font-weight:500;font-size:12.5px}
+  .bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:9px 0 6px}
+  .bar i{display:block;height:100%;border-radius:4px;transition:width .45s cubic-bezier(.2,.7,.2,1)}
+  .cat .foot{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+  .cat .left.over{color:var(--over);font-weight:700}
+
+  .add{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+  .amount-wrap{display:flex;align-items:center;border:1px solid var(--line-strong);border-radius:11px;background:#fff;padding:0 14px}
+  .amount-wrap span{font-size:24px;color:var(--muted);font-weight:600}
+  .amount-wrap input{border:0;outline:0;background:transparent;font-size:28px;font-weight:700;padding:12px 8px;width:100%;font-family:ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+  .chips{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0}
+  .chip{border:1.5px solid var(--line-strong);background:#fff;border-radius:10px;padding:9px 6px;cursor:pointer;font-size:13px;font-weight:600;color:var(--ink);display:flex;align-items:center;justify-content:center;gap:7px;transition:.15s}
+  .chip .dot{width:9px;height:9px}
+  .chip[aria-pressed="true"]{color:#fff;border-color:transparent}
+  .meta{display:flex;gap:8px;margin-bottom:12px}
+  .meta input{flex:1;border:1px solid var(--line-strong);border-radius:10px;padding:11px 12px;font-size:14px;background:#fff;outline:0;color:var(--ink)}
+  .meta input[type=date]{flex:none;width:146px}
+  .btn{width:100%;border:0;border-radius:11px;background:var(--ink);color:#F4F1E9;font-size:15px;font-weight:700;padding:13px;cursor:pointer;transition:.15s}
+  .btn:hover{transform:translateY(-1px)}.btn:active{transform:translateY(0)}
+
+  .ledger{margin-top:24px}
+  .ledger .head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line-strong);padding-bottom:8px;margin-bottom:4px}
+  .ledger .head h2{margin:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .tools{display:flex;gap:14px}
+  .tools button{background:none;border:0;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline}
+  .item{display:flex;align-items:center;gap:12px;padding:11px 2px;border-bottom:1px solid var(--line)}
+  .item .date{font-size:12px;color:var(--muted);width:46px;flex:none;text-transform:uppercase}
+  .item .body{flex:1;min-width:0}
+  .item .body .cat-name{font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+  .item .body .note{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .item .amt{font-weight:700;font-size:15px}
+  .item .del{background:none;border:0;color:var(--muted);cursor:pointer;font-size:17px;padding:4px;opacity:.5;transition:.15s}
+  .item .del:hover{opacity:1;color:var(--over)}
+  .empty{padding:24px 4px;color:var(--muted);font-style:italic;text-align:center}
+  .savednote{text-align:center;font-size:11px;color:var(--muted);margin-top:18px}
+
+  .editpanel{background:#fff;border:1px dashed var(--line-strong);border-radius:12px;padding:13px;margin-top:11px}
+  .editrow{display:flex;gap:8px;align-items:center;margin-bottom:9px}
+  .editrow .elabel{font-size:12.5px;color:var(--muted);width:120px;flex:none}
+  .editrow input{border:1px solid var(--line-strong);border-radius:8px;padding:8px 10px;font-size:13px;background:#fff;outline:0;color:var(--ink)}
+  .editrow input.lbl{flex:1}
+  .editrow .bud{display:flex;align-items:center;border:1px solid var(--line-strong);border-radius:8px;background:#fff;padding:0 8px}
+  .editrow .bud input{border:0;width:90px;padding:8px 4px;text-align:right;font-family:ui-monospace,monospace;font-variant-numeric:tabular-nums}
+  .editpanel .btn{margin-top:4px}
+
+  a:focus-visible,button:focus-visible,input:focus-visible,.chip:focus-visible{outline:2px solid var(--subs);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"><div class="loading">Opening your ledger…</div></div>
+<input type="file" id="importFile" accept="application/json" style="display:none">
+
+<script>
+const COLORS={car:'#BD6526',food:'#2E7A57',trips:'#1F7A8C',subs:'#4B57A0'};
+const DEFAULT_CATS=[
+  {id:'car',label:'Car',budget:450},
+  {id:'food',label:'Food',budget:1500},
+  {id:'trips',label:'Trips',budget:300},
+  {id:'subs',label:'Subscriptions',budget:100},
+];
+const DEFAULT_MONEY={cash:1446,savings:0,debt:2423.5,limit:4000,paycheck:2184,toChase:1223.5};
+
+let cats=[],expenses=[],money={},picked='food',editCats=false,editMoney=false;
+const $=s=>document.querySelector(s);
+function fmt(n){const neg=n<0;n=Math.abs(Math.round(n*100)/100);const s=n.toLocaleString('en-US',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});return (neg?'\u2212$':'$')+s;}
+const shortDate=iso=>new Date(iso+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
+const todayISO=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');};
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+// ---- storage: this browser, persists across sessions ----
+function lsGet(k){try{const v=localStorage.getItem(k);return v?JSON.parse(v):null;}catch(e){return null;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){console.error('save failed',e);}}
+
+function load(){
+  cats=lsGet('sl_settings')||DEFAULT_CATS.map(c=>({...c}));
+  DEFAULT_CATS.forEach((d,i)=>{if(!cats.find(c=>c.id===d.id))cats.splice(i,0,{...d});});
+  expenses=lsGet('sl_expenses')||[];
+  money={...DEFAULT_MONEY,...(lsGet('sl_money')||{})};
+}
+const saveSettings=()=>lsSet('sl_settings',cats);
+const saveExpenses=()=>lsSet('sl_expenses',expenses);
+const saveMoney=()=>lsSet('sl_money',money);
+
+const spentBy=id=>expenses.filter(e=>e.catId===id).reduce((s,e)=>s+e.amount,0);
+const catById=id=>cats.find(c=>c.id===id)||{label:id};
+
+function allocOutputs(toChase){
+  const tc=Math.max(0,Math.min(toChase,money.paycheck));
+  const ts=money.paycheck-tc;
+  const debtAfter=Math.max(0,money.debt-tc);
+  const util=money.limit?debtAfter/money.limit:0;
+  return {tc,ts,debtAfter,util,savAfter:money.savings+ts,over:util>0.30};
+}
+function renderAlloc(){
+  const o=allocOutputs(money.toChase);
+  $('#toChaseV').textContent=fmt(o.tc);
+  $('#toSaveV').textContent=fmt(o.ts);
+  $('#debtAfter').innerHTML=`Card \u2192 <b>${fmt(o.debtAfter)}</b> &middot; <span class="flag ${o.over?'bad':'ok'}">${Math.round(o.util*100)}% ${o.over?'over 30%':'under 30%'}</span>`;
+  $('#savAfter').innerHTML=`Savings \u2192 <b>${fmt(o.savAfter)}</b>`;
+}
+
+function render(){
+  const totalSpent=expenses.reduce((s,e)=>s+e.amount,0);
+  const totalBud=cats.reduce((s,c)=>s+(+c.budget||0),0);
+  const segs=cats.map(c=>{const w=totalBud?Math.min(spentBy(c.id)/totalBud*100,100):0;return `<i style="width:${w}%;background:${COLORS[c.id]}"></i>`;}).join('');
+  const netLiquid=money.cash+money.savings-money.debt;
+
+  const moneyEdit=editMoney?`<div class="editpanel">
+    ${[['cash','Cash on hand'],['savings','Savings'],['debt','Card debt (0%)'],['limit','Card limit'],['paycheck','1st paycheck (net)']].map(([k,l])=>`
+      <div class="editrow"><span class="elabel">${l}</span><span class="bud"><span>$</span><input class="mono" data-m="${k}" value="${money[k]}" inputmode="decimal" aria-label="${l}"></span></div>`).join('')}
+    <button class="btn" id="saveMoneyBtn">Save balances</button></div>`:'';
+
+  const catCards=cats.map(c=>{
+    const sp=spentBy(c.id),bud=+c.budget||0,pct=bud?Math.min(sp/bud*100,100):0,over=sp>bud,left=bud-sp;
+    return `<div class="cat"><div class="row1">
+        <div class="name"><span class="dot" style="background:${COLORS[c.id]}"></span>${esc(c.label)}</div>
+        <div class="spent mono">${fmt(sp)} <span class="ofbud">/ ${fmt(bud)}</span></div></div>
+      <div class="bar"><i style="width:${pct}%;background:${over?'var(--over)':COLORS[c.id]}"></i></div>
+      <div class="foot"><span>${bud?Math.round(sp/bud*100):0}% used</span>
+        <span class="left mono ${over?'over':''}">${over?fmt(-left)+' over':fmt(left)+' left'}</span></div></div>`;
+  }).join('');
+
+  const catsEdit=editCats?`<div class="editpanel">
+    ${cats.map(c=>`<div class="editrow"><span class="dot" style="background:${COLORS[c.id]}"></span>
+      <input class="lbl" data-lbl="${c.id}" value="${esc(c.label)}" aria-label="Name">
+      <span class="bud"><span>$</span><input class="mono" data-bud="${c.id}" value="${+c.budget||0}" inputmode="decimal" aria-label="Budget"></span></div>`).join('')}
+    <button class="btn" id="saveCatsBtn">Save categories</button></div>`:'';
+
+  const chips=cats.map(c=>`<button class="chip" data-cat="${c.id}" aria-pressed="${picked===c.id}"
+      style="${picked===c.id?`background:${COLORS[c.id]}`:''}">
+      <span class="dot" style="background:${picked===c.id?'#fff':COLORS[c.id]}"></span>${esc(c.label)}</button>`).join('');
+
+  const sorted=[...expenses].sort((a,b)=>b.date===a.date?b.seq-a.seq:(b.date<a.date?-1:1));
+  const list=sorted.length?sorted.map(e=>`<div class="item">
+      <div class="date mono">${shortDate(e.date)}</div>
+      <div class="body"><div class="cat-name" style="color:${COLORS[e.catId]}">${esc(catById(e.catId).label)}</div>
+        <div class="note">${e.note?esc(e.note):'\u2014'}</div></div>
+      <div class="amt mono">${fmt(e.amount)}</div>
+      <button class="del" data-del="${e.id}" aria-label="Delete">\u00d7</button></div>`).join('')
+    :`<div class="empty">No entries yet. Log your first expense above.</div>`;
+
+  $('#app').innerHTML=`
+    <div class="mast"><h1>Summer Ledger</h1><div class="range">Jun 15 \u2013 Aug 14 \u00b7 Bay Area</div></div>
+
+    <p class="section-label">Where you stand<button class="editlink" id="emToggle">${editMoney?'close':'update balances'}</button></p>
+    <div class="stand"><div class="tiles">
+        <div class="tile"><div class="k">Cash on hand</div><div class="v mono">${fmt(money.cash)}</div><div class="sub">after rent</div></div>
+        <div class="tile"><div class="k">Savings</div><div class="v mono">${fmt(money.savings)}</div><div class="sub">drained by rent</div></div>
+        <div class="tile"><div class="k">Card debt</div><div class="v mono">${fmt(money.debt)}</div><div class="sub">0% till Jul '27</div></div>
+      </div>
+      <div class="netline"><span>Cash + savings \u2212 card</span><b class="mono">${fmt(netLiquid)}</b></div>
+      ${moneyEdit}</div>
+
+    <p class="section-label">Your first paycheck \u2014 where should it go?</p>
+    <div class="alloc">
+      <div class="pcheck"><span>Net paycheck</span><span class="v mono">${fmt(money.paycheck)}</span></div>
+      <input type="range" id="split" min="0" max="${money.paycheck}" step="1" value="${Math.min(money.toChase,money.paycheck)}" aria-label="Toward card">
+      <div class="slabels"><span>all to savings</span><span>all to card</span></div>
+      <div class="splitouts">
+        <div class="splitout chase"><div class="k">Pay toward card</div><div class="v mono" id="toChaseV"></div><div class="after" id="debtAfter"></div></div>
+        <div class="splitout save"><div class="k">Into savings</div><div class="v mono" id="toSaveV"></div><div class="after" id="savAfter"></div></div>
+      </div>
+      <div class="quick">
+        <button id="rec">Pay card to 30%</button>
+        <button id="full">Put it all on card</button>
+        <button id="allsave">All to savings</button>
+      </div>
+      <p class="rationale">The card is 0% until July 2027, so carrying it costs nothing. The recommended split pays it down just enough to get utilization under 30% (restoring your limit and protecting your score), and sends the rest to rebuild the savings rent drained. Later paychecks finish clearing the card.</p>
+    </div>
+
+    <p class="section-label">Summer spending<button class="editlink" id="ecToggle">${editCats?'close':'edit categories'}</button></p>
+    ${catsEdit}
+    <div class="topline"><div class="big mono">${fmt(totalSpent)}</div><div class="small mono">of ${fmt(totalBud)} budget \u00b7 ${fmt(totalBud-totalSpent)} left</div></div>
+    <div class="topbar">${segs}</div>
+    <div class="cats">${catCards}</div>
+
+    <div class="add">
+      <div class="amount-wrap"><span>$</span><input id="amt" inputmode="decimal" placeholder="0.00" aria-label="Amount"></div>
+      <div class="chips">${chips}</div>
+      <div class="meta"><input id="note" placeholder="Note (e.g. Shell, road trip)" aria-label="Note"><input id="date" type="date" value="${todayISO()}" aria-label="Date"></div>
+      <button class="btn" id="logBtn">Log expense</button>
+    </div>
+
+    <div class="ledger"><div class="head"><h2>Entries</h2>
+      <div class="tools"><button id="exportBtn">Export backup</button><button id="importBtn">Import</button></div></div>
+      ${list}</div>
+    <p class="savednote">Saved to this browser automatically. Use Export now and then to keep a backup file.</p>`;
+
+  renderAlloc();wire();
+}
+
+function wire(){
+  $('#emToggle').onclick=()=>{editMoney=!editMoney;render();};
+  $('#ecToggle').onclick=()=>{editCats=!editCats;render();};
+  if($('#saveMoneyBtn'))$('#saveMoneyBtn').onclick=saveMoneyEdit;
+  if($('#saveCatsBtn'))$('#saveCatsBtn').onclick=saveCatsEdit;
+  const sl=$('#split');
+  sl.oninput=()=>{money.toChase=+sl.value;renderAlloc();};
+  sl.onchange=saveMoney;
+  $('#rec').onclick=()=>{money.toChase=Math.max(0,Math.min(money.debt-0.30*money.limit,money.paycheck));sl.value=money.toChase;renderAlloc();saveMoney();};
+  $('#full').onclick=()=>{money.toChase=money.paycheck;sl.value=money.toChase;renderAlloc();saveMoney();};
+  $('#allsave').onclick=()=>{money.toChase=0;sl.value=0;renderAlloc();saveMoney();};
+  document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{picked=b.dataset.cat;render();});
+  $('#logBtn').onclick=addExpense;
+  $('#amt').onkeydown=e=>{if(e.key==='Enter')addExpense();};
+  document.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>del(b.dataset.del));
+  $('#exportBtn').onclick=exportData;
+  $('#importBtn').onclick=()=>$('#importFile').click();
+}
+
+function saveMoneyEdit(){
+  document.querySelectorAll('[data-m]').forEach(i=>{const v=parseFloat(i.value);if(!isNaN(v))money[i.dataset.m]=Math.max(0,v);});
+  money.toChase=Math.min(money.toChase,money.paycheck);saveMoney();editMoney=false;render();
+}
+function saveCatsEdit(){
+  cats.forEach(c=>{const l=document.querySelector(`[data-lbl="${c.id}"]`),b=document.querySelector(`[data-bud="${c.id}"]`);
+    if(l&&l.value.trim())c.label=l.value.trim();if(b)c.budget=Math.max(0,parseFloat(b.value)||0);});
+  saveSettings();editCats=false;render();
+}
+function addExpense(){
+  const a=parseFloat($('#amt').value);if(!a||a<=0){$('#amt').focus();return;}
+  expenses.push({id:Date.now()+''+Math.floor(Math.random()*999),catId:picked,amount:a,note:$('#note').value.trim(),date:$('#date').value||todayISO(),seq:Date.now()});
+  saveExpenses();render();$('#amt').focus();
+}
+function del(id){expenses=expenses.filter(e=>e.id!==id);saveExpenses();render();}
+
+function exportData(){
+  const data={app:'summer-ledger',v:1,exportedAt:new Date().toISOString(),cats,expenses,money};
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);const a=document.createElement('a');
+  a.href=url;a.download='summer-ledger-backup.json';document.body.appendChild(a);a.click();
+  a.remove();URL.revokeObjectURL(url);
+}
+$('#importFile').addEventListener('change',ev=>{
+  const f=ev.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{
+    try{
+      const d=JSON.parse(r.result);
+      if(d.cats)cats=d.cats;
+      if(Array.isArray(d.expenses))expenses=d.expenses;
+      if(d.money)money={...DEFAULT_MONEY,...d.money};
+      DEFAULT_CATS.forEach((dc,i)=>{if(!cats.find(c=>c.id===dc.id))cats.splice(i,0,{...dc});});
+      saveSettings();saveExpenses();saveMoney();render();
+    }catch(e){alert('That file could not be read as a Summer Ledger backup.');}
+    ev.target.value='';
+  };
+  r.readAsText(f);
+});
+
+load();render();
+</script>
+</body>
+</html>
