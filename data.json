@@ -61,14 +61,6 @@
       "note": "monthly parking pass",
       "date": "2026-06-17",
       "seq": 5
-    },
-    {
-      "id": "1781749079315873",
-      "catId": "food",
-      "amount": 2,
-      "note": "",
-      "date": "2026-06-17",
-      "seq": 1781749079315
     }
   ],
   "money": {
