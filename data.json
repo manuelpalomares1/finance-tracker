@@ -23,14 +23,6 @@
   ],
   "expenses": [
     {
-      "id": "1",
-      "catId": "food",
-      "amount": 9.99,
-      "note": "panda express",
-      "date": "2026-06-17",
-      "seq": 1
-    },
-    {
       "id": "2",
       "catId": "food",
       "amount": 15.91,
