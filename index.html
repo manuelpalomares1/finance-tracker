@@ -143,19 +143,26 @@ const DATA_URL='/api/load';
 const SAVE_URL='/api/save';
 
 let cats=[],expenses=[],money={},picked='food',editCats=false,editMoney=false;
-let saveTimer=null;
+let saveTimer=null,saving=false,pendingSave=false;
 const $=s=>document.querySelector(s);
 function fmt(n){const neg=n<0;n=Math.abs(Math.round(n*100)/100);const s=n.toLocaleString('en-US',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});return (neg?'\u2212$':'$')+s;}
 const shortDate=iso=>new Date(iso+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
 const todayISO=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');};
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 
+async function doSave(){
+  if(saving){pendingSave=true;return;}
+  saving=true;
+  try{await fetch(SAVE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({cats,expenses,money})});}
+  catch(e){console.error('save failed',e);}
+  finally{
+    saving=false;
+    if(pendingSave){pendingSave=false;doSave();}
+  }
+}
 function scheduleSave(){
   clearTimeout(saveTimer);
-  saveTimer=setTimeout(async()=>{
-    try{await fetch(SAVE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({cats,expenses,money})});}
-    catch(e){console.error('save failed',e);}
-  },800);
+  saveTimer=setTimeout(doSave,800);
 }
 
 async function load(){
