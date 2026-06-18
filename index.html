@@ -139,7 +139,7 @@ const DEFAULT_CATS=[
 ];
 const DEFAULT_MONEY={cash:331.40,savings:856.11,debt:2520.01,limit:4000,paycheck:1585,toChase:1585};
 const SAVINGS_GOAL=4000;
-const DATA_URL='https://raw.githubusercontent.com/manuelpalomares1/finance-tracker/main/data.json';
+const DATA_URL='/api/load';
 const SAVE_URL='/api/save';
 
 let cats=[],expenses=[],money={},picked='food',editCats=false,editMoney=false;
@@ -160,7 +160,7 @@ function scheduleSave(){
 
 async function load(){
   try{
-    const res=await fetch(DATA_URL+'?t='+Date.now());
+    const res=await fetch(DATA_URL);
     const d=await res.json();
     cats=d.cats||DEFAULT_CATS.map(c=>({...c}));
     expenses=d.expenses||[];
