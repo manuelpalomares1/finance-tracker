@@ -1,19 +1,78 @@
 {
   "cats": [
-    {"id": "car", "label": "Car", "budget": 450},
-    {"id": "food", "label": "Food", "budget": 1500},
-    {"id": "trips", "label": "Trips", "budget": 300},
-    {"id": "subs", "label": "Subscriptions", "budget": 100}
+    {
+      "id": "car",
+      "label": "Car",
+      "budget": 450
+    },
+    {
+      "id": "food",
+      "label": "Food",
+      "budget": 1500
+    },
+    {
+      "id": "trips",
+      "label": "Trips",
+      "budget": 300
+    },
+    {
+      "id": "subs",
+      "label": "Subscriptions",
+      "budget": 100
+    }
   ],
   "expenses": [
-    {"id": "1", "catId": "food", "amount": 9.99, "note": "panda express", "date": "2026-06-17", "seq": 1},
-    {"id": "2", "catId": "food", "amount": 15.91, "note": "chipotle", "date": "2026-06-17", "seq": 2},
-    {"id": "3", "catId": "food", "amount": 14.41, "note": "nick the greek", "date": "2026-06-17", "seq": 3},
-    {"id": "4", "catId": "car", "amount": 33.41, "note": "uber from airport", "date": "2026-06-17", "seq": 4},
-    {"id": "5", "catId": "car", "amount": 48, "note": "monthly parking pass", "date": "2026-06-17", "seq": 5}
+    {
+      "id": "1",
+      "catId": "food",
+      "amount": 9.99,
+      "note": "panda express",
+      "date": "2026-06-17",
+      "seq": 1
+    },
+    {
+      "id": "2",
+      "catId": "food",
+      "amount": 15.91,
+      "note": "chipotle",
+      "date": "2026-06-17",
+      "seq": 2
+    },
+    {
+      "id": "3",
+      "catId": "food",
+      "amount": 14.41,
+      "note": "nick the greek",
+      "date": "2026-06-17",
+      "seq": 3
+    },
+    {
+      "id": "4",
+      "catId": "car",
+      "amount": 33.41,
+      "note": "uber from airport",
+      "date": "2026-06-17",
+      "seq": 4
+    },
+    {
+      "id": "5",
+      "catId": "car",
+      "amount": 48,
+      "note": "monthly parking pass",
+      "date": "2026-06-17",
+      "seq": 5
+    },
+    {
+      "id": "1781749079315873",
+      "catId": "food",
+      "amount": 2,
+      "note": "",
+      "date": "2026-06-17",
+      "seq": 1781749079315
+    }
   ],
   "money": {
-    "cash": 331.40,
+    "cash": 331.4,
     "savings": 856.11,
     "debt": 2520.01,
     "limit": 4000,
