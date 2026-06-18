@@ -139,37 +139,42 @@ const DEFAULT_CATS=[
 ];
 const DEFAULT_MONEY={cash:331.40,savings:856.11,debt:2520.01,limit:4000,paycheck:1585,toChase:1585};
 const SAVINGS_GOAL=4000;
+const DATA_URL='https://raw.githubusercontent.com/manuelpalomares1/finance-tracker/main/data.json';
+const SAVE_URL='/api/save';
 
 let cats=[],expenses=[],money={},picked='food',editCats=false,editMoney=false;
+let saveTimer=null;
 const $=s=>document.querySelector(s);
 function fmt(n){const neg=n<0;n=Math.abs(Math.round(n*100)/100);const s=n.toLocaleString('en-US',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});return (neg?'\u2212$':'$')+s;}
 const shortDate=iso=>new Date(iso+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
 const todayISO=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');};
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 
-// ---- storage: this browser, persists across sessions ----
-function lsGet(k){try{const v=localStorage.getItem(k);return v?JSON.parse(v):null;}catch(e){return null;}}
-function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){console.error('save failed',e);}}
-
-const DEFAULT_EXPENSES=[
-  {id:'1',catId:'food',amount:9.99,note:'panda express',date:'2026-06-17',seq:1},
-  {id:'2',catId:'food',amount:15.91,note:'chipotle',date:'2026-06-17',seq:2},
-  {id:'3',catId:'food',amount:14.41,note:'nick the greek',date:'2026-06-17',seq:3},
-  {id:'4',catId:'car',amount:33.41,note:'uber from airport',date:'2026-06-17',seq:4},
-  {id:'5',catId:'car',amount:48,note:'monthly parking pass',date:'2026-06-17',seq:5},
-];
-
-function load(){
-  cats=lsGet('sl_settings')||DEFAULT_CATS.map(c=>({...c}));
-  DEFAULT_CATS.forEach((d,i)=>{if(!cats.find(c=>c.id===d.id))cats.splice(i,0,{...d});});
-  expenses=lsGet('sl_expenses')||[];
-  DEFAULT_EXPENSES.forEach(d=>{if(!expenses.find(e=>e.id===d.id))expenses.unshift({...d});});
-  saveExpenses();
-  money={...DEFAULT_MONEY,...(lsGet('sl_money')||{})};
+function scheduleSave(){
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(async()=>{
+    try{await fetch(SAVE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({cats,expenses,money})});}
+    catch(e){console.error('save failed',e);}
+  },800);
 }
-const saveSettings=()=>lsSet('sl_settings',cats);
-const saveExpenses=()=>lsSet('sl_expenses',expenses);
-const saveMoney=()=>lsSet('sl_money',money);
+
+async function load(){
+  try{
+    const res=await fetch(DATA_URL+'?t='+Date.now());
+    const d=await res.json();
+    cats=d.cats||DEFAULT_CATS.map(c=>({...c}));
+    expenses=d.expenses||[];
+    money={...DEFAULT_MONEY,...(d.money||{})};
+    DEFAULT_CATS.forEach((dc,i)=>{if(!cats.find(c=>c.id===dc.id))cats.splice(i,0,{...dc});});
+  }catch(e){
+    cats=DEFAULT_CATS.map(c=>({...c}));
+    expenses=[];
+    money={...DEFAULT_MONEY};
+  }
+}
+const saveSettings=()=>scheduleSave();
+const saveExpenses=()=>scheduleSave();
+const saveMoney=()=>scheduleSave();
 
 const spentBy=id=>expenses.filter(e=>e.catId===id).reduce((s,e)=>s+e.amount,0);
 const catById=id=>cats.find(c=>c.id===id)||{label:id};
@@ -339,14 +344,14 @@ $('#importFile').addEventListener('change',ev=>{
       if(Array.isArray(d.expenses))expenses=d.expenses;
       if(d.money)money={...DEFAULT_MONEY,...d.money};
       DEFAULT_CATS.forEach((dc,i)=>{if(!cats.find(c=>c.id===dc.id))cats.splice(i,0,{...dc});});
-      saveSettings();saveExpenses();saveMoney();render();
+      scheduleSave();render();
     }catch(e){alert('That file could not be read as a Summer Ledger backup.');}
     ev.target.value='';
   };
   r.readAsText(f);
 });
 
-load();render();
+load().then(render);
 </script>
 </body>
 </html>
