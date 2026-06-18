@@ -61,6 +61,14 @@
       "note": "panda express - dinner",
       "date": "2026-06-14",
       "seq": 1781749497591
+    },
+    {
+      "id": "1781816080168656",
+      "catId": "car",
+      "amount": 60,
+      "note": "gas",
+      "date": "2026-06-17",
+      "seq": 1781816080168
     }
   ],
   "money": {
