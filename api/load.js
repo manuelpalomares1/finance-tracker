@@ -10,7 +10,11 @@ module.exports = async function handler(req, res) {
   };
 
   const getRes = await fetch(apiUrl, { headers });
-  if (!getRes.ok) return res.status(500).json({ error: 'Could not load data' });
+  if (!getRes.ok) {
+    const errBody = await getRes.json().catch(()=>({}));
+    console.error('GitHub API error:', getRes.status, errBody);
+    return res.status(500).json({ error: 'Could not load data', status: getRes.status, detail: errBody.message });
+  }
 
   const file = await getRes.json();
   const data = JSON.parse(Buffer.from(file.content, 'base64').toString('utf8'));
