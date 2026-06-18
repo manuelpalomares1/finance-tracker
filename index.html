@@ -162,7 +162,9 @@ const DEFAULT_EXPENSES=[
 function load(){
   cats=lsGet('sl_settings')||DEFAULT_CATS.map(c=>({...c}));
   DEFAULT_CATS.forEach((d,i)=>{if(!cats.find(c=>c.id===d.id))cats.splice(i,0,{...d});});
-  expenses=lsGet('sl_expenses')||DEFAULT_EXPENSES.map(e=>({...e}));
+  expenses=lsGet('sl_expenses')||[];
+  DEFAULT_EXPENSES.forEach(d=>{if(!expenses.find(e=>e.id===d.id))expenses.unshift({...d});});
+  saveExpenses();
   money={...DEFAULT_MONEY,...(lsGet('sl_money')||{})};
 }
 const saveSettings=()=>lsSet('sl_settings',cats);
