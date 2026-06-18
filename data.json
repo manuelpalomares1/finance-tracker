@@ -77,6 +77,14 @@
       "note": "groceries",
       "date": "2026-06-17",
       "seq": 1781816103537
+    },
+    {
+      "id": "1781816152447239",
+      "catId": "food",
+      "amount": 16.53,
+      "note": "nick the greek",
+      "date": "2026-06-18",
+      "seq": 1781816152447
     }
   ],
   "money": {
