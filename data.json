@@ -39,14 +39,6 @@
       "seq": 2
     },
     {
-      "id": "3",
-      "catId": "food",
-      "amount": 14.41,
-      "note": "nick the greek",
-      "date": "2026-06-17",
-      "seq": 3
-    },
-    {
       "id": "5",
       "catId": "car",
       "amount": 48,
