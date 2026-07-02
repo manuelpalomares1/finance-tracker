@@ -253,6 +253,14 @@
       "note": "uber ride to ale's",
       "date": "2026-06-28",
       "seq": 1782960706544
+    },
+    {
+      "id": "1782960720545575",
+      "catId": "car",
+      "amount": 6.68,
+      "note": "uber ride from ann's",
+      "date": "2026-06-24",
+      "seq": 1782960720545
     }
   ],
   "money": {
