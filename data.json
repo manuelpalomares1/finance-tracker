@@ -237,6 +237,14 @@
       "note": "gas + carwash",
       "date": "2026-07-01",
       "seq": 1782960678766
+    },
+    {
+      "id": "1782960693103274",
+      "catId": "car",
+      "amount": 6,
+      "note": "vacuum, 3+3 on chase",
+      "date": "2026-07-01",
+      "seq": 1782960693103
     }
   ],
   "money": {
