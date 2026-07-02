@@ -116,6 +116,9 @@
   .item-edit .save-btn{background:var(--ink);color:#F4F1E9}
   .item-edit .cancel-btn{background:var(--line);color:var(--ink)}
   .empty{padding:24px 4px;color:var(--muted);font-style:italic;text-align:center}
+  .filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+  .fchip{border:1.5px solid var(--line-strong);background:#fff;border-radius:20px;padding:5px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:5px;transition:.15s}
+  .fchip.active{color:#fff;border-color:transparent}
   .savednote{text-align:center;font-size:11px;color:var(--muted);margin-top:18px}
 
   .goal{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;padding:16px;box-shadow:var(--shadow);margin-bottom:26px}
@@ -157,7 +160,7 @@ const SAVINGS_GOAL=4000;
 const DATA_URL='/api/load';
 const SAVE_URL='/api/save';
 
-let cats=[],expenses=[],money={},picked='food',editCats=false,editMoney=false,editingId=null;
+let cats=[],expenses=[],money={},picked='food',editCats=false,editMoney=false,editingId=null,filterCat=null;
 let saveTimer=null,saving=false,pendingSave=false;
 const $=s=>document.querySelector(s);
 function fmt(n){const neg=n<0;n=Math.abs(Math.round(n*100)/100);const s=n.toLocaleString('en-US',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});return (neg?'\u2212$':'$')+s;}
@@ -247,7 +250,8 @@ function render(){
       style="${picked===c.id?`background:${COLORS[c.id]}`:''}">
       <span class="dot" style="background:${picked===c.id?'#fff':COLORS[c.id]}"></span>${esc(c.label)}</button>`).join('');
 
-  const sorted=[...expenses].sort((a,b)=>b.date===a.date?b.seq-a.seq:(b.date<a.date?-1:1));
+  const filtered=filterCat?expenses.filter(e=>e.catId===filterCat):expenses;
+  const sorted=[...filtered].sort((a,b)=>b.date===a.date?b.seq-a.seq:(b.date<a.date?-1:1));
   const list=sorted.length?sorted.map(e=>{
     const isEditing=editingId===e.id;
     const editForm=isEditing?`<div class="item-edit">
@@ -323,6 +327,12 @@ function render(){
 
     <div class="ledger"><div class="head"><h2>Entries</h2>
       <div class="tools"><button id="exportBtn">Export backup</button><button id="importBtn">Import</button></div></div>
+      <div class="filters">
+        <button class="fchip${!filterCat?' active':''}" style="${!filterCat?'background:var(--ink)':''}" data-filter="">All</button>
+        ${cats.map(c=>`<button class="fchip${filterCat===c.id?' active':''}" data-filter="${c.id}"
+          style="${filterCat===c.id?`background:${COLORS[c.id]}`:''}">
+          <span class="dot" style="width:8px;height:8px;background:${filterCat===c.id?'#fff':COLORS[c.id]}"></span>${esc(c.label)}</button>`).join('')}
+      </div>
       ${list}</div>
     <p class="savednote">Saved to this browser automatically. Use Export now and then to keep a backup file.</p>`;
 
@@ -358,6 +368,7 @@ function wire(){
   });
   document.querySelectorAll('[data-save]').forEach(b=>b.onclick=()=>saveEdit(b.dataset.save));
   $('#exportBtn').onclick=exportData;
+  document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filterCat=b.dataset.filter||null;render();});
   $('#importBtn').onclick=()=>$('#importFile').click();
 }
 
