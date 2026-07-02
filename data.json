@@ -93,6 +93,14 @@
       "note": "chipotle",
       "date": "2026-06-18",
       "seq": 1781816163597
+    },
+    {
+      "id": "1782960018084153",
+      "catId": "subs",
+      "amount": 26.75,
+      "note": "zipcar annual",
+      "date": "2026-06-22",
+      "seq": 1782960018084
     }
   ],
   "money": {
