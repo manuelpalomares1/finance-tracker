@@ -149,6 +149,14 @@
       "note": "chipotle dinner",
       "date": "2026-06-20",
       "seq": 1782960369218
+    },
+    {
+      "id": "1782960410832105",
+      "catId": "food",
+      "amount": 16.45,
+      "note": "shake shack (lunch or dinner)",
+      "date": "2026-06-20",
+      "seq": 1782960410832
     }
   ],
   "money": {
