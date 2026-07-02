@@ -173,6 +173,14 @@
       "note": "trufruit + shampoo, etc",
       "date": "2026-06-21",
       "seq": 1782960449035
+    },
+    {
+      "id": "1782960483827802",
+      "catId": "food",
+      "amount": 17.55,
+      "note": "dinner w/ lu+ana, onigilly",
+      "date": "2026-06-21",
+      "seq": 1782960483827
     }
   ],
   "money": {
