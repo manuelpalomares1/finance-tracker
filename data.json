@@ -109,6 +109,14 @@
       "note": "anthropic monthly",
       "date": "2026-06-29",
       "seq": 1782960040252
+    },
+    {
+      "id": "1782960054281878",
+      "catId": "subs",
+      "amount": 1.99,
+      "note": "google",
+      "date": "2026-07-01",
+      "seq": 1782960054281
     }
   ],
   "money": {
