@@ -141,6 +141,14 @@
       "note": "netflix",
       "date": "2026-06-20",
       "seq": 1782960325416
+    },
+    {
+      "id": "1782960369218595",
+      "catId": "food",
+      "amount": 15.91,
+      "note": "chipotle dinner",
+      "date": "2026-06-20",
+      "seq": 1782960369218
     }
   ],
   "money": {
