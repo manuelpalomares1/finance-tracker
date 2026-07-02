@@ -310,7 +310,11 @@ function wire(){
   $('#rec').onclick=()=>{money.toChase=Math.max(0,Math.min(money.debt-0.30*money.limit,money.paycheck));sl.value=money.toChase;renderAlloc();saveMoney();};
   $('#full').onclick=()=>{money.toChase=money.paycheck;sl.value=money.toChase;renderAlloc();saveMoney();};
   $('#allsave').onclick=()=>{money.toChase=0;sl.value=0;renderAlloc();saveMoney();};
-  document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{picked=b.dataset.cat;render();});
+  document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{
+    const amt=$('#amt').value,note=$('#note').value,date=$('#date').value;
+    picked=b.dataset.cat;render();
+    $('#amt').value=amt;$('#note').value=note;$('#date').value=date;
+  });
   $('#logBtn').onclick=addExpense;
   $('#amt').onkeydown=e=>{if(e.key==='Enter')addExpense();};
   document.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>del(b.dataset.del));
