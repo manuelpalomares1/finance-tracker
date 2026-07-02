@@ -189,6 +189,14 @@
       "note": "groceries, tj's",
       "date": "2026-06-21",
       "seq": 1782960501567
+    },
+    {
+      "id": "1782960516803303",
+      "catId": "food",
+      "amount": 62.42,
+      "note": "groceries, tj's",
+      "date": "2026-06-22",
+      "seq": 1782960516803
     }
   ],
   "money": {
