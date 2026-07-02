@@ -125,6 +125,14 @@
       "note": "dinnner lucas",
       "date": "2026-06-22",
       "seq": 1782960098031
+    },
+    {
+      "id": "1782960292856250",
+      "catId": "food",
+      "amount": 11.74,
+      "note": "panda dinner",
+      "date": "2026-06-19",
+      "seq": 1782960292856
     }
   ],
   "money": {
