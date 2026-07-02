@@ -100,6 +100,21 @@
   .item .amt{font-weight:700;font-size:15px}
   .item .del{background:none;border:0;color:var(--muted);cursor:pointer;font-size:17px;padding:4px;opacity:.5;transition:.15s}
   .item .del:hover{opacity:1;color:var(--over)}
+  .item .edit{background:none;border:0;color:var(--muted);cursor:pointer;font-size:14px;padding:4px;opacity:.5;transition:.15s}
+  .item .edit:hover{opacity:1;color:var(--ink)}
+  .item-edit{background:#fff;border:1px solid var(--line-strong);border-radius:12px;padding:12px;margin:4px 0 8px;display:grid;gap:8px}
+  .item-edit .row{display:flex;gap:8px;flex-wrap:wrap}
+  .item-edit input{border:1px solid var(--line-strong);border-radius:8px;padding:8px 10px;font-size:13px;background:#fff;outline:0;color:var(--ink)}
+  .item-edit .amt-in{width:100px;font-family:ui-monospace,monospace;font-variant-numeric:tabular-nums}
+  .item-edit .note-in{flex:1;min-width:120px}
+  .item-edit .date-in{width:140px}
+  .item-edit .echips{display:flex;gap:6px;flex-wrap:wrap}
+  .item-edit .echip{border:1.5px solid var(--line-strong);background:#fff;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:12px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:5px;transition:.15s}
+  .item-edit .echip[aria-pressed="true"]{color:#fff;border-color:transparent}
+  .item-edit .ebtns{display:flex;gap:8px}
+  .item-edit .ebtns button{flex:1;border:0;border-radius:8px;padding:9px;font-size:13px;font-weight:700;cursor:pointer}
+  .item-edit .save-btn{background:var(--ink);color:#F4F1E9}
+  .item-edit .cancel-btn{background:var(--line);color:var(--ink)}
   .empty{padding:24px 4px;color:var(--muted);font-style:italic;text-align:center}
   .savednote{text-align:center;font-size:11px;color:var(--muted);margin-top:18px}
 
@@ -142,7 +157,7 @@ const SAVINGS_GOAL=4000;
 const DATA_URL='/api/load';
 const SAVE_URL='/api/save';
 
-let cats=[],expenses=[],money={},picked='food',editCats=false,editMoney=false;
+let cats=[],expenses=[],money={},picked='food',editCats=false,editMoney=false,editingId=null;
 let saveTimer=null,saving=false,pendingSave=false;
 const $=s=>document.querySelector(s);
 function fmt(n){const neg=n<0;n=Math.abs(Math.round(n*100)/100);const s=n.toLocaleString('en-US',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});return (neg?'\u2212$':'$')+s;}
@@ -233,12 +248,27 @@ function render(){
       <span class="dot" style="background:${picked===c.id?'#fff':COLORS[c.id]}"></span>${esc(c.label)}</button>`).join('');
 
   const sorted=[...expenses].sort((a,b)=>b.date===a.date?b.seq-a.seq:(b.date<a.date?-1:1));
-  const list=sorted.length?sorted.map(e=>`<div class="item">
+  const list=sorted.length?sorted.map(e=>{
+    const isEditing=editingId===e.id;
+    const editForm=isEditing?`<div class="item-edit">
+      <div class="row">
+        <input class="amt-in mono" data-ef="amount" value="${e.amount}" inputmode="decimal" placeholder="Amount">
+        <input class="note-in" data-ef="note" value="${esc(e.note||'')}" placeholder="Note">
+        <input class="date-in" data-ef="date" type="date" value="${e.date}">
+      </div>
+      <div class="echips">${cats.map(c=>`<button class="echip" data-ef-cat="${c.id}" aria-pressed="${e.catId===c.id}"
+          style="${e.catId===c.id?`background:${COLORS[c.id]}`:''}">
+          <span class="dot" style="width:8px;height:8px;background:${e.catId===c.id?'#fff':COLORS[c.id]}"></span>${esc(c.label)}</button>`).join('')}</div>
+      <div class="ebtns"><button class="save-btn" data-save="${e.id}">Save</button><button class="cancel-btn" data-cancel>Cancel</button></div>
+    </div>`:'';
+    return `<div class="item">
       <div class="date mono">${shortDate(e.date)}</div>
       <div class="body"><div class="cat-name" style="color:${COLORS[e.catId]}">${esc(catById(e.catId).label)}</div>
         <div class="note">${e.note?esc(e.note):'\u2014'}</div></div>
       <div class="amt mono">${fmt(e.amount)}</div>
-      <button class="del" data-del="${e.id}" aria-label="Delete">\u00d7</button></div>`).join('')
+      <button class="edit" data-edit="${e.id}" aria-label="Edit">\u270e</button>
+      <button class="del" data-del="${e.id}" aria-label="Delete">\u00d7</button></div>${editForm}`;
+  }).join('')
     :`<div class="empty">No entries yet. Log your first expense above.</div>`;
 
   $('#app').innerHTML=`
@@ -318,6 +348,15 @@ function wire(){
   $('#logBtn').onclick=addExpense;
   $('#amt').onkeydown=e=>{if(e.key==='Enter')addExpense();};
   document.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>del(b.dataset.del));
+  document.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>{editingId=editingId===b.dataset.edit?null:b.dataset.edit;render();});
+  document.querySelectorAll('[data-cancel]').forEach(b=>b.onclick=()=>{editingId=null;render();});
+  document.querySelectorAll('[data-ef-cat]').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('[data-ef-cat]').forEach(x=>{x.setAttribute('aria-pressed','false');x.style.background='';});
+    b.setAttribute('aria-pressed','true');b.style.background=COLORS[b.dataset.efCat];
+    b.querySelector('.dot').style.background='#fff';
+    document.querySelectorAll('[data-ef-cat]').forEach(x=>{if(x!==b)x.querySelector('.dot').style.background=COLORS[x.dataset.efCat];});
+  });
+  document.querySelectorAll('[data-save]').forEach(b=>b.onclick=()=>saveEdit(b.dataset.save));
   $('#exportBtn').onclick=exportData;
   $('#importBtn').onclick=()=>$('#importFile').click();
 }
@@ -337,6 +376,16 @@ function addExpense(){
   saveExpenses();render();$('#amt').focus();
 }
 function del(id){expenses=expenses.filter(e=>e.id!==id);saveExpenses();render();}
+function saveEdit(id){
+  const amt=parseFloat(document.querySelector('[data-ef="amount"]').value);
+  if(!amt||amt<=0)return;
+  const note=document.querySelector('[data-ef="note"]').value.trim();
+  const date=document.querySelector('[data-ef="date"]').value;
+  const catBtn=document.querySelector('[data-ef-cat][aria-pressed="true"]');
+  const catId=catBtn?catBtn.dataset.efCat:null;
+  expenses=expenses.map(e=>e.id===id?{...e,amount:amt,note,date:date||e.date,catId:catId||e.catId}:e);
+  editingId=null;saveExpenses();render();
+}
 
 function exportData(){
   const data={app:'summer-ledger',v:1,exportedAt:new Date().toISOString(),cats,expenses,money};
