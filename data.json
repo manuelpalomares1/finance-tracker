@@ -245,6 +245,14 @@
       "note": "vacuum, 3+3 on chase",
       "date": "2026-07-01",
       "seq": 1782960693103
+    },
+    {
+      "id": "1782960706544370",
+      "catId": "car",
+      "amount": 11.1,
+      "note": "uber ride to ale's",
+      "date": "2026-06-28",
+      "seq": 1782960706544
     }
   ],
   "money": {
