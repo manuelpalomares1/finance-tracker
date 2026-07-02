@@ -165,6 +165,14 @@
       "note": "panda lunch",
       "date": "2026-06-21",
       "seq": 1782960426273
+    },
+    {
+      "id": "1782960449035268",
+      "catId": "food",
+      "amount": 40.03,
+      "note": "trufruit + shampoo, etc",
+      "date": "2026-06-21",
+      "seq": 1782960449035
     }
   ],
   "money": {
