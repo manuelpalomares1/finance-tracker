@@ -261,6 +261,14 @@
       "note": "brunch w lucas",
       "date": "2026-07-03",
       "seq": 1783289259613
+    },
+    {
+      "id": "178328928016653",
+      "catId": "food",
+      "amount": 12.9,
+      "note": "cookies for sylvana",
+      "date": "2026-07-03",
+      "seq": 1783289280166
     }
   ],
   "money": {
