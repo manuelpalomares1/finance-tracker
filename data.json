@@ -253,6 +253,14 @@
       "note": "uber ride from ann's",
       "date": "2026-06-24",
       "seq": 1782960720545
+    },
+    {
+      "id": "1783289259613248",
+      "catId": "food",
+      "amount": 19.82,
+      "note": "brunch w lucas",
+      "date": "2026-07-03",
+      "seq": 1783289259613
     }
   ],
   "money": {
