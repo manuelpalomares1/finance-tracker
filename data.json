@@ -285,14 +285,6 @@
       "note": "caltrain",
       "date": "2026-07-04",
       "seq": 1783289312112
-    },
-    {
-      "id": "1783289370023826",
-      "catId": "car",
-      "amount": 26.01,
-      "note": "Scooter ride w ana",
-      "date": "2026-07-05",
-      "seq": 1783289370023
     }
   ],
   "money": {
