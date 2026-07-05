@@ -269,6 +269,14 @@
       "note": "cookies for sylvana",
       "date": "2026-07-03",
       "seq": 1783289280166
+    },
+    {
+      "id": "1783289294290263",
+      "catId": "food",
+      "amount": 7.23,
+      "note": "food for hike",
+      "date": "2026-07-03",
+      "seq": 1783289294290
     }
   ],
   "money": {
