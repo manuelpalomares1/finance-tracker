@@ -293,6 +293,14 @@
       "note": "scooter ride w ana",
       "date": "2026-07-04",
       "seq": 1783289382645
+    },
+    {
+      "id": "1783314208483610",
+      "catId": "subs",
+      "amount": 70,
+      "note": "haircut",
+      "date": "2026-07-05",
+      "seq": 1783314208483
     }
   ],
   "money": {
