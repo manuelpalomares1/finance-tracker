@@ -19,11 +19,6 @@
       "id": "subs",
       "label": "Subscriptions",
       "budget": 100
-    },
-    {
-      "id": "personal",
-      "label": "Personal",
-      "budget": 75
     }
   ],
   "expenses": [
@@ -301,11 +296,19 @@
     },
     {
       "id": "1783314208483610",
-      "catId": "personal",
+      "catId": "subs",
       "amount": 70,
       "note": "haircut",
       "date": "2026-07-05",
       "seq": 1783314208483
+    },
+    {
+      "id": "1783891790599384",
+      "catId": "car",
+      "amount": 48,
+      "note": "monthly parking permit",
+      "date": "2026-07-01",
+      "seq": 1783891790599
     }
   ],
   "money": {
