@@ -19,6 +19,11 @@
       "id": "subs",
       "label": "Subscriptions",
       "budget": 100
+    },
+    {
+      "id": "personal",
+      "label": "Personal",
+      "budget": 75
     }
   ],
   "expenses": [
@@ -296,7 +301,7 @@
     },
     {
       "id": "1783314208483610",
-      "catId": "subs",
+      "catId": "personal",
       "amount": 70,
       "note": "haircut",
       "date": "2026-07-05",
