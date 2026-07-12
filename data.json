@@ -322,6 +322,14 @@
       "note": "parking @ caltrain",
       "date": "2026-07-04",
       "seq": 1783891853290
+    },
+    {
+      "id": "1783891927908221",
+      "catId": "personal",
+      "amount": 12.21,
+      "note": "amazon cc",
+      "date": "2026-07-10",
+      "seq": 1783891927908
     }
   ],
   "money": {
