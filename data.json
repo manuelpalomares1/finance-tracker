@@ -370,6 +370,14 @@
       "note": "uber to lucas' from sar's",
       "date": "2026-07-10",
       "seq": 1783892057615
+    },
+    {
+      "id": "1783892074453554",
+      "catId": "food",
+      "amount": 32.56,
+      "note": "dinner w/ sar",
+      "date": "2026-07-10",
+      "seq": 1783892074453
     }
   ],
   "money": {
