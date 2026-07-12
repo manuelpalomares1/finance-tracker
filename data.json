@@ -362,6 +362,14 @@
       "note": "cachapa lunch",
       "date": "2026-07-11",
       "seq": 1783892044996
+    },
+    {
+      "id": "1783892057615337",
+      "catId": "car",
+      "amount": 6.07,
+      "note": "uber to lucas' from sar's",
+      "date": "2026-07-10",
+      "seq": 1783892057615
     }
   ],
   "money": {
