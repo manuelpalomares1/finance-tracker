@@ -402,6 +402,14 @@
       "note": "parking ticket",
       "date": "2026-07-07",
       "seq": 1783892227407
+    },
+    {
+      "id": "1783892248028729",
+      "catId": "food",
+      "amount": 42.12,
+      "note": "trader joe's weekly",
+      "date": "2026-07-06",
+      "seq": 1783892248028
     }
   ],
   "money": {
