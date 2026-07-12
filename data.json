@@ -410,6 +410,14 @@
       "note": "trader joe's weekly",
       "date": "2026-07-06",
       "seq": 1783892248028
+    },
+    {
+      "id": "1783892266380116",
+      "catId": "food",
+      "amount": 4.93,
+      "note": "cvs, ziploc bags",
+      "date": "2026-07-06",
+      "seq": 1783892266380
     }
   ],
   "money": {
