@@ -330,6 +330,14 @@
       "note": "amazon cc",
       "date": "2026-07-10",
       "seq": 1783891927908
+    },
+    {
+      "id": "1783891983470994",
+      "catId": "car",
+      "amount": 8.5,
+      "note": "caltrain from lucas",
+      "date": "2026-07-11",
+      "seq": 1783891983470
     }
   ],
   "money": {
