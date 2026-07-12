@@ -309,6 +309,14 @@
       "note": "monthly parking permit",
       "date": "2026-07-01",
       "seq": 1783891790599
+    },
+    {
+      "id": "1783891853290280",
+      "catId": "car",
+      "amount": 5.5,
+      "note": "parking @ caltrain",
+      "date": "2026-07-04",
+      "seq": 1783891853290
     }
   ],
   "money": {
