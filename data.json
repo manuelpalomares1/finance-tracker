@@ -338,6 +338,14 @@
       "note": "caltrain from lucas",
       "date": "2026-07-11",
       "seq": 1783891983470
+    },
+    {
+      "id": "1783892005381690",
+      "catId": "car",
+      "amount": 9.12,
+      "note": "uber from caltrain to apt",
+      "date": "2026-07-11",
+      "seq": 1783892005381
     }
   ],
   "money": {
