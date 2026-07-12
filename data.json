@@ -354,6 +354,14 @@
       "note": "tacos @ lucas'",
       "date": "2026-07-11",
       "seq": 1783892019515
+    },
+    {
+      "id": "1783892044996721",
+      "catId": "food",
+      "amount": 31.82,
+      "note": "cachapa lunch",
+      "date": "2026-07-11",
+      "seq": 1783892044996
     }
   ],
   "money": {
