@@ -426,6 +426,14 @@
       "note": "groceries run whole foods",
       "date": "2026-07-16",
       "seq": 1784273092074
+    },
+    {
+      "id": "1784273190274355",
+      "catId": "food",
+      "amount": 65.75,
+      "note": "trader joe’s weekly groceries",
+      "date": "2026-07-12",
+      "seq": 1784273190274
     }
   ],
   "money": {
