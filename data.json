@@ -421,9 +421,9 @@
     }
   ],
   "money": {
-    "cash": 156.48,
-    "savings": 2362.33,
-    "debt": 2465.99,
+    "cash": 24.48,
+    "savings": 1612.33,
+    "debt": 0,
     "limit": 4000,
     "paycheck": 1800,
     "toChase": 37
