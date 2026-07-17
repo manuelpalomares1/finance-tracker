@@ -418,6 +418,14 @@
       "note": "cvs, ziploc bags",
       "date": "2026-07-06",
       "seq": 1783892266380
+    },
+    {
+      "id": "178427309207474",
+      "catId": "food",
+      "amount": 41.28,
+      "note": "groceries run whole foods",
+      "date": "2026-07-16",
+      "seq": 1784273092074
     }
   ],
   "money": {
