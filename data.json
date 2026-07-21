@@ -466,6 +466,14 @@
       "note": "gas station snacks",
       "date": "2026-07-18",
       "seq": 1784612381074
+    },
+    {
+      "id": "1784612420287888",
+      "catId": "food",
+      "amount": 8.75,
+      "note": "popcorn at movies",
+      "date": "2026-07-17",
+      "seq": 1784612420287
     }
   ],
   "money": {
