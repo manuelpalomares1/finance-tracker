@@ -474,6 +474,14 @@
       "note": "popcorn at movies",
       "date": "2026-07-17",
       "seq": 1784612420287
+    },
+    {
+      "id": "178461243904294",
+      "catId": "car",
+      "amount": 54.59,
+      "note": "gas for tahoe",
+      "date": "2026-07-19",
+      "seq": 1784612439042
     }
   ],
   "money": {
