@@ -434,6 +434,14 @@
       "note": "trader joe’s weekly groceries",
       "date": "2026-07-12",
       "seq": 1784273190274
+    },
+    {
+      "id": "1784612319360944",
+      "catId": "food",
+      "amount": 20.85,
+      "note": "chinese food with friends",
+      "date": "2026-07-19",
+      "seq": 1784612319360
     }
   ],
   "money": {
