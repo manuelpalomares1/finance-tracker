@@ -28,12 +28,12 @@
     {
       "id": "subs",
       "label": "Subscriptions",
-      "budget": 100
+      "budget": 150
     },
     {
       "id": "personal",
       "label": "Personal",
-      "budget": 100
+      "budget": 200
     }
   ],
   "expenses": [
