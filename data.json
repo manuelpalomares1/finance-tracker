@@ -441,7 +441,7 @@
       "id": "1784273190274355",
       "catId": "groceries",
       "amount": 65.75,
-      "note": "trader joe\u2019s weekly groceries",
+      "note": "trader joe’s weekly groceries",
       "date": "2026-07-12",
       "seq": 1784273190274
     },
@@ -500,6 +500,14 @@
       "note": "amazon order (personal items)",
       "date": "2026-07-20",
       "seq": 1784618394459
+    },
+    {
+      "id": "1784619606494188",
+      "catId": "trips",
+      "amount": 43.25,
+      "note": "camping reservation",
+      "date": "2026-07-17",
+      "seq": 1784619606494
     }
   ],
   "money": {
