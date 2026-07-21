@@ -450,6 +450,14 @@
       "note": "netflix subscription",
       "date": "2026-07-20",
       "seq": 1784612336546
+    },
+    {
+      "id": "1784612363633512",
+      "catId": "food",
+      "amount": 7.01,
+      "note": "starbucks at safeway",
+      "date": "2026-07-18",
+      "seq": 1784612363633
     }
   ],
   "money": {
