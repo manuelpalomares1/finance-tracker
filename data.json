@@ -458,6 +458,14 @@
       "note": "starbucks at safeway",
       "date": "2026-07-18",
       "seq": 1784612363633
+    },
+    {
+      "id": "1784612381074788",
+      "catId": "food",
+      "amount": 5.38,
+      "note": "gas station snacks",
+      "date": "2026-07-18",
+      "seq": 1784612381074
     }
   ],
   "money": {
