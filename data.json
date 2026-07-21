@@ -508,6 +508,14 @@
       "note": "camping reservation",
       "date": "2026-07-17",
       "seq": 1784619606494
+    },
+    {
+      "id": "1784620329211760",
+      "catId": "subs",
+      "amount": 8.22,
+      "note": "amazon prime subscription",
+      "date": "2026-07-21",
+      "seq": 1784620329211
     }
   ],
   "money": {
