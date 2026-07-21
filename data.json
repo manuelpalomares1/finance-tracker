@@ -442,6 +442,14 @@
       "note": "chinese food with friends",
       "date": "2026-07-19",
       "seq": 1784612319360
+    },
+    {
+      "id": "1784612336546502",
+      "catId": "subs",
+      "amount": 22.62,
+      "note": "netflix subscription",
+      "date": "2026-07-20",
+      "seq": 1784612336546
     }
   ],
   "money": {
