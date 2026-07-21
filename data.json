@@ -482,6 +482,14 @@
       "note": "gas for tahoe",
       "date": "2026-07-19",
       "seq": 1784612439042
+    },
+    {
+      "id": "1784618394459170",
+      "catId": "personal",
+      "amount": 70.25,
+      "note": "amazon order (personal items)",
+      "date": "2026-07-20",
+      "seq": 1784618394459
     }
   ],
   "money": {
