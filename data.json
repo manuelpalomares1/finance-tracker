@@ -516,6 +516,14 @@
       "note": "amazon prime subscription",
       "date": "2026-07-21",
       "seq": 1784620329211
+    },
+    {
+      "id": "1784646641097294",
+      "catId": "trips",
+      "amount": 16,
+      "note": "movie ticket",
+      "date": "2026-07-17",
+      "seq": 1784646641097
     }
   ],
   "money": {
