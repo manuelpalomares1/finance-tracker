@@ -148,19 +148,22 @@
 <input type="file" id="importFile" accept="application/json" style="display:none">
 
 <script>
-const COLORS={car:'#BD6526',food:'#2E7A57',trips:'#1F7A8C',subs:'#4B57A0',personal:'#9C4F7A'};
+const COLORS={carexp:'#BD6526',transport:'#3E7CB1',groceries:'#2E7A57',eatingout:'#CC8B1A',trips:'#1F7A8C',subs:'#4B57A0',personal:'#9C4F7A'};
 const DEFAULT_CATS=[
-  {id:'car',label:'Car',budget:450},
-  {id:'food',label:'Food',budget:1500},
+  {id:'carexp',label:'Car Expenses',budget:350},
+  {id:'transport',label:'Transportation',budget:150},
+  {id:'groceries',label:'Groceries',budget:900},
+  {id:'eatingout',label:'Eating Out',budget:600},
   {id:'trips',label:'Trips',budget:300},
-  {id:'subs',label:'Subscriptions',budget:100},{id:'personal',label:'Personal',budget:75},
+  {id:'subs',label:'Subscriptions',budget:100},
+  {id:'personal',label:'Personal',budget:100},
 ];
 const DEFAULT_MONEY={cash:331.40,savings:856.11,debt:2520.01,limit:4000,paycheck:1585,toChase:1585};
 const SAVINGS_GOAL=4000;
 const DATA_URL='/api/load';
 const SAVE_URL='/api/save';
 
-let cats=[],expenses=[],money={},picked='food',editCats=false,editMoney=false,editingId=null,filterCat=null;
+let cats=[],expenses=[],money={},picked='eatingout',editCats=false,editMoney=false,editingId=null,filterCat=null,filterMonth=null;
 let saveTimer=null,saving=false,pendingSave=false;
 const $=s=>document.querySelector(s);
 function fmt(n){const neg=n<0;n=Math.abs(Math.round(n*100)/100);const s=n.toLocaleString('en-US',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});return (neg?'\u2212$':'$')+s;}
@@ -201,7 +204,8 @@ const saveSettings=()=>scheduleSave();
 const saveExpenses=()=>scheduleSave();
 const saveMoney=()=>scheduleSave();
 
-const spentBy=id=>expenses.filter(e=>e.catId===id).reduce((s,e)=>s+e.amount,0);
+const spentBy=(id,month)=>expenses.filter(e=>e.catId===id&&(!month||e.date.slice(0,7)===month)).reduce((s,e)=>s+e.amount,0);
+const monthLabel=key=>{const [y,m]=key.split('-');return new Date(+y,+m-1,1).toLocaleDateString('en-US',{month:'short'});};
 const catById=id=>cats.find(c=>c.id===id)||{label:id};
 
 function allocOutputs(toChase){
@@ -220,9 +224,10 @@ function renderAlloc(){
 }
 
 function render(){
-  const totalSpent=expenses.reduce((s,e)=>s+e.amount,0);
+  const months=[...new Set(expenses.map(e=>e.date.slice(0,7)))].sort();
+  const totalSpent=expenses.filter(e=>!filterMonth||e.date.slice(0,7)===filterMonth).reduce((s,e)=>s+e.amount,0);
   const totalBud=cats.reduce((s,c)=>s+(+c.budget||0),0);
-  const segs=cats.map(c=>{const w=totalBud?Math.min(spentBy(c.id)/totalBud*100,100):0;return `<i style="width:${w}%;background:${COLORS[c.id]}"></i>`;}).join('');
+  const segs=cats.map(c=>{const w=totalBud?Math.min(spentBy(c.id,filterMonth)/totalBud*100,100):0;return `<i style="width:${w}%;background:${COLORS[c.id]}"></i>`;}).join('');
   const netLiquid=money.cash+money.savings-money.debt;
 
   const moneyEdit=editMoney?`<div class="editpanel">
@@ -230,13 +235,18 @@ function render(){
       <div class="editrow"><span class="elabel">${l}</span><span class="bud"><span>$</span><input class="mono" data-m="${k}" value="${money[k]}" inputmode="decimal" aria-label="${l}"></span></div>`).join('')}
     <button class="btn" id="saveMoneyBtn">Save balances</button></div>`:'';
 
+  const monthChips=months.length>1?`<div class="filters" style="margin-bottom:10px">
+      <button class="fchip${!filterMonth?' active':''}" style="${!filterMonth?'background:var(--ink)':''}" data-month="">All months</button>
+      ${months.map(m=>`<button class="fchip${filterMonth===m?' active':''}" style="${filterMonth===m?'background:var(--ink)':''}" data-month="${m}">${monthLabel(m)}</button>`).join('')}
+    </div>`:'';
+
   const catCards=cats.map(c=>{
-    const sp=spentBy(c.id),bud=+c.budget||0,pct=bud?Math.min(sp/bud*100,100):0,over=sp>bud,left=bud-sp;
+    const sp=spentBy(c.id,filterMonth),bud=+c.budget||0,pct=bud?Math.min(sp/bud*100,100):0,over=sp>bud,left=bud-sp;
     return `<div class="cat"><div class="row1">
         <div class="name"><span class="dot" style="background:${COLORS[c.id]}"></span>${esc(c.label)}</div>
-        <div class="spent mono">${fmt(sp)} <span class="ofbud">/ ${fmt(bud)}</span></div></div>
+        <div class="spent mono">${fmt(sp)} <span class="ofbud">/ ${fmt(bud)}${filterMonth?' (summer budget)':''}</span></div></div>
       <div class="bar"><i style="width:${pct}%;background:${over?'var(--over)':COLORS[c.id]}"></i></div>
-      <div class="foot"><span>${bud?Math.round(sp/bud*100):0}% used</span>
+      <div class="foot"><span>${bud?Math.round(sp/bud*100):0}% of summer budget${filterMonth?' used so far':''}</span>
         <span class="left mono ${over?'over':''}">${over?fmt(-left)+' over':fmt(left)+' left'}</span></div></div>`;
   }).join('');
 
@@ -250,7 +260,7 @@ function render(){
       style="${picked===c.id?`background:${COLORS[c.id]}`:''}">
       <span class="dot" style="background:${picked===c.id?'#fff':COLORS[c.id]}"></span>${esc(c.label)}</button>`).join('');
 
-  const filtered=filterCat?expenses.filter(e=>e.catId===filterCat):expenses;
+  const filtered=expenses.filter(e=>(!filterCat||e.catId===filterCat)&&(!filterMonth||e.date.slice(0,7)===filterMonth));
   const sorted=[...filtered].sort((a,b)=>b.date===a.date?b.seq-a.seq:(b.date<a.date?-1:1));
   const list=sorted.length?sorted.map(e=>{
     const isEditing=editingId===e.id;
@@ -314,7 +324,8 @@ function render(){
 
     <p class="section-label">Summer spending<button class="editlink" id="ecToggle">${editCats?'close':'edit categories'}</button></p>
     ${catsEdit}
-    <div class="topline"><div class="big mono">${fmt(totalSpent)}</div><div class="small mono">of ${fmt(totalBud)} budget \u00b7 ${fmt(totalBud-totalSpent)} left</div></div>
+    ${monthChips}
+    <div class="topline"><div class="big mono">${fmt(totalSpent)}</div><div class="small mono">${filterMonth?monthLabel(filterMonth)+' spending':'of '+fmt(totalBud)+' budget \u00b7 '+fmt(totalBud-totalSpent)+' left'}</div></div>
     <div class="topbar">${segs}</div>
     <div class="cats">${catCards}</div>
 
@@ -369,6 +380,7 @@ function wire(){
   document.querySelectorAll('[data-save]').forEach(b=>b.onclick=()=>saveEdit(b.dataset.save));
   $('#exportBtn').onclick=exportData;
   document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filterCat=b.dataset.filter||null;render();});
+  document.querySelectorAll('[data-month]').forEach(b=>b.onclick=()=>{filterMonth=b.dataset.month||null;render();});
   $('#importBtn').onclick=()=>$('#importFile').click();
 }
 

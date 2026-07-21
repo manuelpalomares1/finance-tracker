@@ -1,14 +1,24 @@
 {
   "cats": [
     {
-      "id": "car",
-      "label": "Car",
-      "budget": 450
+      "id": "carexp",
+      "label": "Car Expenses",
+      "budget": 350
     },
     {
-      "id": "food",
-      "label": "Food",
-      "budget": 1500
+      "id": "transport",
+      "label": "Transportation",
+      "budget": 150
+    },
+    {
+      "id": "groceries",
+      "label": "Groceries",
+      "budget": 900
+    },
+    {
+      "id": "eatingout",
+      "label": "Eating Out",
+      "budget": 600
     },
     {
       "id": "trips",
@@ -29,7 +39,7 @@
   "expenses": [
     {
       "id": "2",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 15.91,
       "note": "chipotle",
       "date": "2026-06-17",
@@ -37,7 +47,7 @@
     },
     {
       "id": "5",
-      "catId": "car",
+      "catId": "carexp",
       "amount": 48,
       "note": "monthly parking pass",
       "date": "2026-06-17",
@@ -45,7 +55,7 @@
     },
     {
       "id": "1781749328155893",
-      "catId": "car",
+      "catId": "transport",
       "amount": 33.41,
       "note": "uber from airport",
       "date": "2026-06-14",
@@ -53,7 +63,7 @@
     },
     {
       "id": "1781749350198475",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 14.41,
       "note": "nick the greek",
       "date": "2026-06-15",
@@ -61,7 +71,7 @@
     },
     {
       "id": "1781749497591445",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 9.99,
       "note": "panda express - dinner",
       "date": "2026-06-14",
@@ -69,7 +79,7 @@
     },
     {
       "id": "1781816080168656",
-      "catId": "car",
+      "catId": "carexp",
       "amount": 60,
       "note": "gas",
       "date": "2026-06-17",
@@ -77,7 +87,7 @@
     },
     {
       "id": "1781816103537344",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 33.78,
       "note": "groceries",
       "date": "2026-06-17",
@@ -85,7 +95,7 @@
     },
     {
       "id": "1781816152447239",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 16.53,
       "note": "nick the greek",
       "date": "2026-06-18",
@@ -93,7 +103,7 @@
     },
     {
       "id": "1781816163597933",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 15.91,
       "note": "chipotle",
       "date": "2026-06-18",
@@ -125,7 +135,7 @@
     },
     {
       "id": "1782960098031884",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 10,
       "note": "dinnner lucas",
       "date": "2026-06-22",
@@ -133,7 +143,7 @@
     },
     {
       "id": "1782960292856250",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 11.74,
       "note": "panda dinner",
       "date": "2026-06-19",
@@ -149,7 +159,7 @@
     },
     {
       "id": "1782960369218595",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 15.91,
       "note": "chipotle dinner",
       "date": "2026-06-20",
@@ -157,7 +167,7 @@
     },
     {
       "id": "1782960410832105",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 16.45,
       "note": "shake shack (lunch or dinner)",
       "date": "2026-06-20",
@@ -165,7 +175,7 @@
     },
     {
       "id": "1782960426273318",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 11.74,
       "note": "panda lunch",
       "date": "2026-06-21",
@@ -173,7 +183,7 @@
     },
     {
       "id": "1782960449035268",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 40.03,
       "note": "trufruit + shampoo, etc",
       "date": "2026-06-21",
@@ -181,7 +191,7 @@
     },
     {
       "id": "1782960483827802",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 17.55,
       "note": "dinner w/ lu+ana, onigilly",
       "date": "2026-06-21",
@@ -189,7 +199,7 @@
     },
     {
       "id": "1782960501567823",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 7.28,
       "note": "groceries, tj's",
       "date": "2026-06-21",
@@ -197,7 +207,7 @@
     },
     {
       "id": "1782960516803303",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 62.42,
       "note": "groceries, tj's",
       "date": "2026-06-22",
@@ -221,7 +231,7 @@
     },
     {
       "id": "1782960654305740",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 44.91,
       "note": "groceries, tj's",
       "date": "2026-06-28",
@@ -229,7 +239,7 @@
     },
     {
       "id": "1782960678766182",
-      "catId": "car",
+      "catId": "carexp",
       "amount": 72.99,
       "note": "gas + carwash",
       "date": "2026-07-01",
@@ -237,7 +247,7 @@
     },
     {
       "id": "1782960693103274",
-      "catId": "car",
+      "catId": "carexp",
       "amount": 6,
       "note": "vacuum, 3+3 on chase",
       "date": "2026-07-01",
@@ -245,7 +255,7 @@
     },
     {
       "id": "1782960706544370",
-      "catId": "car",
+      "catId": "transport",
       "amount": 11.1,
       "note": "uber ride to ale's",
       "date": "2026-06-28",
@@ -253,7 +263,7 @@
     },
     {
       "id": "1782960720545575",
-      "catId": "car",
+      "catId": "transport",
       "amount": 6.68,
       "note": "uber ride from ann's",
       "date": "2026-06-24",
@@ -261,7 +271,7 @@
     },
     {
       "id": "1783289259613248",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 19.82,
       "note": "brunch w lucas",
       "date": "2026-07-03",
@@ -269,7 +279,7 @@
     },
     {
       "id": "178328928016653",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 12.9,
       "note": "cookies for sylvana",
       "date": "2026-07-03",
@@ -277,7 +287,7 @@
     },
     {
       "id": "1783289294290263",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 7.23,
       "note": "food for hike",
       "date": "2026-07-03",
@@ -285,7 +295,7 @@
     },
     {
       "id": "178328931211260",
-      "catId": "car",
+      "catId": "transport",
       "amount": 8.5,
       "note": "caltrain",
       "date": "2026-07-04",
@@ -293,7 +303,7 @@
     },
     {
       "id": "1783289382645381",
-      "catId": "car",
+      "catId": "transport",
       "amount": 26.01,
       "note": "scooter ride w ana",
       "date": "2026-07-04",
@@ -309,7 +319,7 @@
     },
     {
       "id": "1783891790599384",
-      "catId": "car",
+      "catId": "carexp",
       "amount": 48,
       "note": "monthly parking permit",
       "date": "2026-07-01",
@@ -317,7 +327,7 @@
     },
     {
       "id": "1783891853290280",
-      "catId": "car",
+      "catId": "carexp",
       "amount": 5.5,
       "note": "parking @ caltrain",
       "date": "2026-07-04",
@@ -333,7 +343,7 @@
     },
     {
       "id": "1783891983470994",
-      "catId": "car",
+      "catId": "transport",
       "amount": 8.5,
       "note": "caltrain from lucas",
       "date": "2026-07-11",
@@ -341,7 +351,7 @@
     },
     {
       "id": "1783892005381690",
-      "catId": "car",
+      "catId": "transport",
       "amount": 9.12,
       "note": "uber from caltrain to apt",
       "date": "2026-07-11",
@@ -349,7 +359,7 @@
     },
     {
       "id": "1783892019515546",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 17.11,
       "note": "tacos @ lucas'",
       "date": "2026-07-11",
@@ -357,7 +367,7 @@
     },
     {
       "id": "1783892044996721",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 31.82,
       "note": "cachapa lunch",
       "date": "2026-07-11",
@@ -365,7 +375,7 @@
     },
     {
       "id": "1783892057615337",
-      "catId": "car",
+      "catId": "transport",
       "amount": 6.07,
       "note": "uber to lucas' from sar's",
       "date": "2026-07-10",
@@ -373,7 +383,7 @@
     },
     {
       "id": "1783892074453554",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 32.56,
       "note": "dinner w/ sar",
       "date": "2026-07-10",
@@ -381,7 +391,7 @@
     },
     {
       "id": "1783892087761776",
-      "catId": "car",
+      "catId": "transport",
       "amount": 2.85,
       "note": "train to sar",
       "date": "2026-07-10",
@@ -397,7 +407,7 @@
     },
     {
       "id": "178389222740788",
-      "catId": "car",
+      "catId": "carexp",
       "amount": 32,
       "note": "parking ticket",
       "date": "2026-07-07",
@@ -405,7 +415,7 @@
     },
     {
       "id": "1783892248028729",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 42.12,
       "note": "trader joe's weekly",
       "date": "2026-07-06",
@@ -413,7 +423,7 @@
     },
     {
       "id": "1783892266380116",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 4.93,
       "note": "cvs, ziploc bags",
       "date": "2026-07-06",
@@ -421,7 +431,7 @@
     },
     {
       "id": "178427309207474",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 41.28,
       "note": "groceries run whole foods",
       "date": "2026-07-16",
@@ -429,15 +439,15 @@
     },
     {
       "id": "1784273190274355",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 65.75,
-      "note": "trader joe’s weekly groceries",
+      "note": "trader joe\u2019s weekly groceries",
       "date": "2026-07-12",
       "seq": 1784273190274
     },
     {
       "id": "1784612319360944",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 20.85,
       "note": "chinese food with friends",
       "date": "2026-07-19",
@@ -453,7 +463,7 @@
     },
     {
       "id": "1784612363633512",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 7.01,
       "note": "starbucks at safeway",
       "date": "2026-07-18",
@@ -461,7 +471,7 @@
     },
     {
       "id": "1784612381074788",
-      "catId": "food",
+      "catId": "groceries",
       "amount": 5.38,
       "note": "gas station snacks",
       "date": "2026-07-18",
@@ -469,7 +479,7 @@
     },
     {
       "id": "1784612420287888",
-      "catId": "food",
+      "catId": "eatingout",
       "amount": 8.75,
       "note": "popcorn at movies",
       "date": "2026-07-17",
@@ -477,7 +487,7 @@
     },
     {
       "id": "178461243904294",
-      "catId": "car",
+      "catId": "carexp",
       "amount": 54.59,
       "note": "gas for tahoe",
       "date": "2026-07-19",
