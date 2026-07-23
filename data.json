@@ -532,6 +532,14 @@
       "note": "burger @ alpine + entrance to filoli",
       "date": "2026-07-19",
       "seq": 1784822965656
+    },
+    {
+      "id": "1784822986990908",
+      "catId": "groceries",
+      "amount": 66.31,
+      "note": "",
+      "date": "2026-07-23",
+      "seq": 1784822986990
     }
   ],
   "money": {
