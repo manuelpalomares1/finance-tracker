@@ -572,6 +572,14 @@
       "note": "uber one subscription",
       "date": "2026-07-24",
       "seq": 1785139447992
+    },
+    {
+      "id": "1785139486566219",
+      "catId": "transport",
+      "amount": 7.21,
+      "note": "uber to caltrain from lucas",
+      "date": "2026-07-25",
+      "seq": 1785139486566
     }
   ],
   "money": {
