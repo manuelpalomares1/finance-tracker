@@ -628,6 +628,14 @@
       "note": "beer @ bar",
       "date": "2026-07-24",
       "seq": 1785139582995
+    },
+    {
+      "id": "1785139604372151",
+      "catId": "eatingout",
+      "amount": 13,
+      "note": "tacos w gaston n mikey",
+      "date": "2026-07-24",
+      "seq": 1785139604372
     }
   ],
   "money": {
