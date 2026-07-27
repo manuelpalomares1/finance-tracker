@@ -636,6 +636,14 @@
       "note": "tacos w gaston n mikey",
       "date": "2026-07-24",
       "seq": 1785139604372
+    },
+    {
+      "id": "1785139687867392",
+      "catId": "transport",
+      "amount": 5.5,
+      "note": "caltrain parking",
+      "date": "2026-07-24",
+      "seq": 1785139687867
     }
   ],
   "money": {
