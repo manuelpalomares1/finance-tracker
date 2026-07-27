@@ -596,6 +596,14 @@
       "note": "gas to tahoe",
       "date": "2026-07-25",
       "seq": 1785139512177
+    },
+    {
+      "id": "1785139529719213",
+      "catId": "trips",
+      "amount": 24,
+      "note": "snacks 4 tahoe",
+      "date": "2026-07-25",
+      "seq": 1785139529719
     }
   ],
   "money": {
