@@ -604,6 +604,14 @@
       "note": "snacks 4 tahoe",
       "date": "2026-07-25",
       "seq": 1785139529719
+    },
+    {
+      "id": "178513954578845",
+      "catId": "subs",
+      "amount": 9.99,
+      "note": "apple subscription",
+      "date": "2026-07-26",
+      "seq": 1785139545788
     }
   ],
   "money": {
