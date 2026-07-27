@@ -620,6 +620,14 @@
       "note": "monday lunch",
       "date": "2026-07-27",
       "seq": 1785139566727
+    },
+    {
+      "id": "1785139582995783",
+      "catId": "personal",
+      "amount": 20,
+      "note": "beer @ bar",
+      "date": "2026-07-24",
+      "seq": 1785139582995
     }
   ],
   "money": {
