@@ -612,6 +612,14 @@
       "note": "apple subscription",
       "date": "2026-07-26",
       "seq": 1785139545788
+    },
+    {
+      "id": "1785139566727831",
+      "catId": "eatingout",
+      "amount": 1.63,
+      "note": "monday lunch",
+      "date": "2026-07-27",
+      "seq": 1785139566727
     }
   ],
   "money": {
