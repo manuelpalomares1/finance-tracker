@@ -1,1 +1,654 @@
-{"cats": [{"id": "carexp", "label": "Car Expenses", "budget": 350}, {"id": "transport", "label": "Transportation", "budget": 150}, {"id": "groceries", "label": "Groceries", "budget": 900}, {"id": "eatingout", "label": "Eating Out", "budget": 600}, {"id": "trips", "label": "Trips", "budget": 270}, {"id": "subs", "label": "Subscriptions", "budget": 150}, {"id": "personal", "label": "Personal", "budget": 180}, {"id": "fun", "label": "Fun", "budget": 50}], "expenses": [{"id": "2", "catId": "eatingout", "amount": 15.91, "note": "chipotle", "date": "2026-06-17", "seq": 2}, {"id": "5", "catId": "carexp", "amount": 48, "note": "monthly parking pass", "date": "2026-06-17", "seq": 5}, {"id": "1781749328155893", "catId": "transport", "amount": 33.41, "note": "uber from airport", "date": "2026-06-14", "seq": 1781749328155}, {"id": "1781749350198475", "catId": "eatingout", "amount": 14.41, "note": "nick the greek", "date": "2026-06-15", "seq": 1781749350198}, {"id": "1781749497591445", "catId": "eatingout", "amount": 9.99, "note": "panda express - dinner", "date": "2026-06-14", "seq": 1781749497591}, {"id": "1781816080168656", "catId": "carexp", "amount": 60, "note": "gas", "date": "2026-06-17", "seq": 1781816080168}, {"id": "1781816103537344", "catId": "groceries", "amount": 33.78, "note": "groceries", "date": "2026-06-17", "seq": 1781816103537}, {"id": "1781816152447239", "catId": "eatingout", "amount": 16.53, "note": "nick the greek", "date": "2026-06-18", "seq": 1781816152447}, {"id": "1781816163597933", "catId": "eatingout", "amount": 15.91, "note": "chipotle", "date": "2026-06-18", "seq": 1781816163597}, {"id": "1782960018084153", "catId": "subs", "amount": 26.75, "note": "zipcar annual", "date": "2026-06-22", "seq": 1782960018084}, {"id": "1782960040252209", "catId": "subs", "amount": 20, "note": "anthropic monthly", "date": "2026-06-29", "seq": 1782960040252}, {"id": "1782960054281878", "catId": "subs", "amount": 1.99, "note": "google", "date": "2026-07-01", "seq": 1782960054281}, {"id": "1782960098031884", "catId": "eatingout", "amount": 10, "note": "dinnner lucas", "date": "2026-06-22", "seq": 1782960098031}, {"id": "1782960292856250", "catId": "eatingout", "amount": 11.74, "note": "panda dinner", "date": "2026-06-19", "seq": 1782960292856}, {"id": "1782960325416271", "catId": "subs", "amount": 22.62, "note": "netflix", "date": "2026-06-20", "seq": 1782960325416}, {"id": "1782960369218595", "catId": "eatingout", "amount": 15.91, "note": "chipotle dinner", "date": "2026-06-20", "seq": 1782960369218}, {"id": "1782960410832105", "catId": "eatingout", "amount": 16.45, "note": "shake shack (lunch or dinner)", "date": "2026-06-20", "seq": 1782960410832}, {"id": "1782960426273318", "catId": "eatingout", "amount": 11.74, "note": "panda lunch", "date": "2026-06-21", "seq": 1782960426273}, {"id": "1782960449035268", "catId": "personal", "amount": 40.03, "note": "trufruit + shampoo, etc", "date": "2026-06-21", "seq": 1782960449035}, {"id": "1782960483827802", "catId": "eatingout", "amount": 17.55, "note": "dinner w/ lu+ana, onigilly", "date": "2026-06-21", "seq": 1782960483827}, {"id": "1782960501567823", "catId": "groceries", "amount": 7.28, "note": "groceries, tj's", "date": "2026-06-21", "seq": 1782960501567}, {"id": "1782960516803303", "catId": "groceries", "amount": 62.42, "note": "groceries, tj's", "date": "2026-06-22", "seq": 1782960516803}, {"id": "1782960621357827", "catId": "subs", "amount": 4.99, "note": "uber one", "date": "2026-06-24", "seq": 1782960621357}, {"id": "1782960634835139", "catId": "subs", "amount": 9.99, "note": "apple", "date": "2026-06-28", "seq": 1782960634835}, {"id": "1782960654305740", "catId": "groceries", "amount": 44.91, "note": "groceries, tj's", "date": "2026-06-28", "seq": 1782960654305}, {"id": "1782960678766182", "catId": "carexp", "amount": 72.99, "note": "gas + carwash", "date": "2026-07-01", "seq": 1782960678766}, {"id": "1782960693103274", "catId": "carexp", "amount": 6, "note": "vacuum, 3+3 on chase", "date": "2026-07-01", "seq": 1782960693103}, {"id": "1782960706544370", "catId": "transport", "amount": 11.1, "note": "uber ride to ale's", "date": "2026-06-28", "seq": 1782960706544}, {"id": "1782960720545575", "catId": "transport", "amount": 6.68, "note": "uber ride from ann's", "date": "2026-06-24", "seq": 1782960720545}, {"id": "1783289259613248", "catId": "eatingout", "amount": 19.82, "note": "brunch w lucas", "date": "2026-07-03", "seq": 1783289259613}, {"id": "178328928016653", "catId": "eatingout", "amount": 12.9, "note": "cookies for sylvana", "date": "2026-07-03", "seq": 1783289280166}, {"id": "1783289294290263", "catId": "trips", "amount": 7.23, "note": "food for hike", "date": "2026-07-03", "seq": 1783289294290}, {"id": "178328931211260", "catId": "transport", "amount": 8.5, "note": "caltrain", "date": "2026-07-04", "seq": 1783289312112}, {"id": "1783289382645381", "catId": "transport", "amount": 26.01, "note": "scooter ride w ana", "date": "2026-07-04", "seq": 1783289382645}, {"id": "1783314208483610", "catId": "personal", "amount": 70, "note": "haircut", "date": "2026-07-05", "seq": 1783314208483}, {"id": "1783891790599384", "catId": "carexp", "amount": 48, "note": "monthly parking permit", "date": "2026-07-01", "seq": 1783891790599}, {"id": "1783891853290280", "catId": "transport", "amount": 5.5, "note": "parking @ caltrain", "date": "2026-07-04", "seq": 1783891853290}, {"id": "1783891927908221", "catId": "personal", "amount": 12.21, "note": "amazon cc", "date": "2026-07-10", "seq": 1783891927908}, {"id": "1783891983470994", "catId": "transport", "amount": 8.5, "note": "caltrain from lucas", "date": "2026-07-11", "seq": 1783891983470}, {"id": "1783892005381690", "catId": "transport", "amount": 9.12, "note": "uber from caltrain to apt", "date": "2026-07-11", "seq": 1783892005381}, {"id": "1783892019515546", "catId": "eatingout", "amount": 17.11, "note": "tacos @ lucas'", "date": "2026-07-11", "seq": 1783892019515}, {"id": "1783892044996721", "catId": "eatingout", "amount": 31.82, "note": "cachapa lunch", "date": "2026-07-11", "seq": 1783892044996}, {"id": "1783892057615337", "catId": "transport", "amount": 6.07, "note": "uber to lucas' from sar's", "date": "2026-07-10", "seq": 1783892057615}, {"id": "1783892074453554", "catId": "eatingout", "amount": 32.56, "note": "dinner w/ sar", "date": "2026-07-10", "seq": 1783892074453}, {"id": "1783892087761776", "catId": "transport", "amount": 2.85, "note": "train to sar", "date": "2026-07-10", "seq": 1783892087761}, {"id": "1783892155181388", "catId": "subs", "amount": 6.21, "note": "hbo max", "date": "2026-07-09", "seq": 1783892155181}, {"id": "178389222740788", "catId": "personal", "amount": 32, "note": "parking ticket miami", "date": "2026-07-07", "seq": 1783892227407}, {"id": "1783892248028729", "catId": "groceries", "amount": 42.12, "note": "trader joe's weekly", "date": "2026-07-06", "seq": 1783892248028}, {"id": "1783892266380116", "catId": "personal", "amount": 4.93, "note": "cvs, ziploc bags", "date": "2026-07-06", "seq": 1783892266380}, {"id": "178427309207474", "catId": "groceries", "amount": 41.28, "note": "groceries run whole foods", "date": "2026-07-16", "seq": 1784273092074}, {"id": "1784273190274355", "catId": "groceries", "amount": 65.75, "note": "trader joe\u2019s weekly groceries", "date": "2026-07-12", "seq": 1784273190274}, {"id": "1784612319360944", "catId": "eatingout", "amount": 24.27, "note": "chinese food with friends", "date": "2026-07-19", "seq": 1784612319360}, {"id": "1784612336546502", "catId": "subs", "amount": 22.62, "note": "netflix subscription", "date": "2026-07-20", "seq": 1784612336546}, {"id": "1784612363633512", "catId": "eatingout", "amount": 7.01, "note": "starbucks at safeway", "date": "2026-07-18", "seq": 1784612363633}, {"id": "1784612381074788", "catId": "eatingout", "amount": 5.38, "note": "gas station snacks", "date": "2026-07-18", "seq": 1784612381074}, {"id": "1784612420287888", "catId": "eatingout", "amount": 8.75, "note": "popcorn at movies", "date": "2026-07-17", "seq": 1784612420287}, {"id": "178461243904294", "catId": "trips", "amount": 54.59, "note": "gas for tahoe", "date": "2026-07-19", "seq": 1784612439042}, {"id": "1784618394459170", "catId": "personal", "amount": 70.25, "note": "amazon order (personal items)", "date": "2026-07-20", "seq": 1784618394459}, {"id": "1784619606494188", "catId": "trips", "amount": 43.25, "note": "camping reservation", "date": "2026-07-17", "seq": 1784619606494}, {"id": "1784620329211760", "catId": "subs", "amount": 8.22, "note": "amazon prime subscription", "date": "2026-07-21", "seq": 1784620329211}, {"id": "1784646641097294", "catId": "trips", "amount": 16, "note": "movie ticket", "date": "2026-07-17", "seq": 1784646641097}, {"id": "1784822965656884", "catId": "eatingout", "amount": 50, "note": "burger @ alpine + entrance to filoli", "date": "2026-07-19", "seq": 1784822965656}, {"id": "1784822986990908", "catId": "groceries", "amount": 66.31, "note": "trader joes weekly", "date": "2026-07-22", "seq": 1784822986990}, {"id": "17851392491955", "catId": "eatingout", "amount": 29.5, "note": "din w ana gia chloe", "date": "2026-07-23", "seq": 1785139249195}, {"id": "1785139388356964", "catId": "transport", "amount": 7.97, "note": "uber to din w gassy", "date": "2026-07-24", "seq": 1785139388356}, {"id": "1785139432460551", "catId": "transport", "amount": 5.5, "note": "uber to pre (lucas g\u2019)", "date": "2026-07-24", "seq": 1785139432460}, {"id": "1785139447992396", "catId": "subs", "amount": 4.99, "note": "uber one subscription", "date": "2026-07-24", "seq": 1785139447992}, {"id": "1785139486566219", "catId": "transport", "amount": 7.21, "note": "uber to caltrain from lucas", "date": "2026-07-25", "seq": 1785139486566}, {"id": "178513950125366", "catId": "transport", "amount": 8.5, "note": "caltrain home", "date": "2026-07-25", "seq": 1785139501253}, {"id": "1785139512177257", "catId": "trips", "amount": 36, "note": "gas to tahoe", "date": "2026-07-25", "seq": 1785139512177}, {"id": "178513954578845", "catId": "subs", "amount": 9.99, "note": "apple subscription", "date": "2026-07-26", "seq": 1785139545788}, {"id": "1785139566727831", "catId": "eatingout", "amount": 1.63, "note": "monday lunch", "date": "2026-07-27", "seq": 1785139566727}, {"id": "1785139582995783", "catId": "personal", "amount": 20, "note": "beer @ bar", "date": "2026-07-24", "seq": 1785139582995}, {"id": "1785139604372151", "catId": "eatingout", "amount": 13, "note": "tacos w gaston n mikey", "date": "2026-07-24", "seq": 1785139604372}, {"id": "1785139687867392", "catId": "transport", "amount": 5.5, "note": "caltrain parking", "date": "2026-07-24", "seq": 1785139687867}], "money": {"cash": 8.3, "savings": 1612.33, "debt": 0, "limit": 4000, "paycheck": 1800, "toChase": 892}}
+{
+  "cats": [
+    {
+      "id": "carexp",
+      "label": "Car Expenses",
+      "budget": 350
+    },
+    {
+      "id": "transport",
+      "label": "Transportation",
+      "budget": 150
+    },
+    {
+      "id": "groceries",
+      "label": "Groceries",
+      "budget": 900
+    },
+    {
+      "id": "eatingout",
+      "label": "Eating Out",
+      "budget": 600
+    },
+    {
+      "id": "trips",
+      "label": "Trips",
+      "budget": 270
+    },
+    {
+      "id": "subs",
+      "label": "Subscriptions",
+      "budget": 150
+    },
+    {
+      "id": "personal",
+      "label": "Personal",
+      "budget": 180
+    },
+    {
+      "id": "fun",
+      "label": "Fun",
+      "budget": 50
+    }
+  ],
+  "expenses": [
+    {
+      "id": "2",
+      "catId": "eatingout",
+      "amount": 15.91,
+      "note": "chipotle",
+      "date": "2026-06-17",
+      "seq": 2
+    },
+    {
+      "id": "5",
+      "catId": "carexp",
+      "amount": 48,
+      "note": "monthly parking pass",
+      "date": "2026-06-17",
+      "seq": 5
+    },
+    {
+      "id": "1781749328155893",
+      "catId": "transport",
+      "amount": 33.41,
+      "note": "uber from airport",
+      "date": "2026-06-14",
+      "seq": 1781749328155
+    },
+    {
+      "id": "1781749350198475",
+      "catId": "eatingout",
+      "amount": 14.41,
+      "note": "nick the greek",
+      "date": "2026-06-15",
+      "seq": 1781749350198
+    },
+    {
+      "id": "1781749497591445",
+      "catId": "eatingout",
+      "amount": 9.99,
+      "note": "panda express - dinner",
+      "date": "2026-06-14",
+      "seq": 1781749497591
+    },
+    {
+      "id": "1781816080168656",
+      "catId": "carexp",
+      "amount": 60,
+      "note": "gas",
+      "date": "2026-06-17",
+      "seq": 1781816080168
+    },
+    {
+      "id": "1781816103537344",
+      "catId": "groceries",
+      "amount": 33.78,
+      "note": "groceries",
+      "date": "2026-06-17",
+      "seq": 1781816103537
+    },
+    {
+      "id": "1781816152447239",
+      "catId": "eatingout",
+      "amount": 16.53,
+      "note": "nick the greek",
+      "date": "2026-06-18",
+      "seq": 1781816152447
+    },
+    {
+      "id": "1781816163597933",
+      "catId": "eatingout",
+      "amount": 15.91,
+      "note": "chipotle",
+      "date": "2026-06-18",
+      "seq": 1781816163597
+    },
+    {
+      "id": "1782960018084153",
+      "catId": "subs",
+      "amount": 26.75,
+      "note": "zipcar annual",
+      "date": "2026-06-22",
+      "seq": 1782960018084
+    },
+    {
+      "id": "1782960040252209",
+      "catId": "subs",
+      "amount": 20,
+      "note": "anthropic monthly",
+      "date": "2026-06-29",
+      "seq": 1782960040252
+    },
+    {
+      "id": "1782960054281878",
+      "catId": "subs",
+      "amount": 1.99,
+      "note": "google",
+      "date": "2026-07-01",
+      "seq": 1782960054281
+    },
+    {
+      "id": "1782960098031884",
+      "catId": "eatingout",
+      "amount": 10,
+      "note": "dinnner lucas",
+      "date": "2026-06-22",
+      "seq": 1782960098031
+    },
+    {
+      "id": "1782960292856250",
+      "catId": "eatingout",
+      "amount": 11.74,
+      "note": "panda dinner",
+      "date": "2026-06-19",
+      "seq": 1782960292856
+    },
+    {
+      "id": "1782960325416271",
+      "catId": "subs",
+      "amount": 22.62,
+      "note": "netflix",
+      "date": "2026-06-20",
+      "seq": 1782960325416
+    },
+    {
+      "id": "1782960369218595",
+      "catId": "eatingout",
+      "amount": 15.91,
+      "note": "chipotle dinner",
+      "date": "2026-06-20",
+      "seq": 1782960369218
+    },
+    {
+      "id": "1782960410832105",
+      "catId": "eatingout",
+      "amount": 16.45,
+      "note": "shake shack (lunch or dinner)",
+      "date": "2026-06-20",
+      "seq": 1782960410832
+    },
+    {
+      "id": "1782960426273318",
+      "catId": "eatingout",
+      "amount": 11.74,
+      "note": "panda lunch",
+      "date": "2026-06-21",
+      "seq": 1782960426273
+    },
+    {
+      "id": "1782960449035268",
+      "catId": "personal",
+      "amount": 40.03,
+      "note": "trufruit + shampoo, etc",
+      "date": "2026-06-21",
+      "seq": 1782960449035
+    },
+    {
+      "id": "1782960483827802",
+      "catId": "eatingout",
+      "amount": 17.55,
+      "note": "dinner w/ lu+ana, onigilly",
+      "date": "2026-06-21",
+      "seq": 1782960483827
+    },
+    {
+      "id": "1782960501567823",
+      "catId": "groceries",
+      "amount": 7.28,
+      "note": "groceries, tj's",
+      "date": "2026-06-21",
+      "seq": 1782960501567
+    },
+    {
+      "id": "1782960516803303",
+      "catId": "groceries",
+      "amount": 62.42,
+      "note": "groceries, tj's",
+      "date": "2026-06-22",
+      "seq": 1782960516803
+    },
+    {
+      "id": "1782960621357827",
+      "catId": "subs",
+      "amount": 4.99,
+      "note": "uber one",
+      "date": "2026-06-24",
+      "seq": 1782960621357
+    },
+    {
+      "id": "1782960634835139",
+      "catId": "subs",
+      "amount": 9.99,
+      "note": "apple",
+      "date": "2026-06-28",
+      "seq": 1782960634835
+    },
+    {
+      "id": "1782960654305740",
+      "catId": "groceries",
+      "amount": 44.91,
+      "note": "groceries, tj's",
+      "date": "2026-06-28",
+      "seq": 1782960654305
+    },
+    {
+      "id": "1782960678766182",
+      "catId": "carexp",
+      "amount": 72.99,
+      "note": "gas + carwash",
+      "date": "2026-07-01",
+      "seq": 1782960678766
+    },
+    {
+      "id": "1782960693103274",
+      "catId": "carexp",
+      "amount": 6,
+      "note": "vacuum, 3+3 on chase",
+      "date": "2026-07-01",
+      "seq": 1782960693103
+    },
+    {
+      "id": "1782960706544370",
+      "catId": "transport",
+      "amount": 11.1,
+      "note": "uber ride to ale's",
+      "date": "2026-06-28",
+      "seq": 1782960706544
+    },
+    {
+      "id": "1782960720545575",
+      "catId": "transport",
+      "amount": 6.68,
+      "note": "uber ride from ann's",
+      "date": "2026-06-24",
+      "seq": 1782960720545
+    },
+    {
+      "id": "1783289259613248",
+      "catId": "eatingout",
+      "amount": 19.82,
+      "note": "brunch w lucas",
+      "date": "2026-07-03",
+      "seq": 1783289259613
+    },
+    {
+      "id": "178328928016653",
+      "catId": "eatingout",
+      "amount": 12.9,
+      "note": "cookies for sylvana",
+      "date": "2026-07-03",
+      "seq": 1783289280166
+    },
+    {
+      "id": "1783289294290263",
+      "catId": "trips",
+      "amount": 7.23,
+      "note": "food for hike",
+      "date": "2026-07-03",
+      "seq": 1783289294290
+    },
+    {
+      "id": "178328931211260",
+      "catId": "transport",
+      "amount": 8.5,
+      "note": "caltrain",
+      "date": "2026-07-04",
+      "seq": 1783289312112
+    },
+    {
+      "id": "1783289382645381",
+      "catId": "transport",
+      "amount": 26.01,
+      "note": "scooter ride w ana",
+      "date": "2026-07-04",
+      "seq": 1783289382645
+    },
+    {
+      "id": "1783314208483610",
+      "catId": "personal",
+      "amount": 70,
+      "note": "haircut",
+      "date": "2026-07-05",
+      "seq": 1783314208483
+    },
+    {
+      "id": "1783891790599384",
+      "catId": "carexp",
+      "amount": 48,
+      "note": "monthly parking permit",
+      "date": "2026-07-01",
+      "seq": 1783891790599
+    },
+    {
+      "id": "1783891853290280",
+      "catId": "transport",
+      "amount": 5.5,
+      "note": "parking @ caltrain",
+      "date": "2026-07-04",
+      "seq": 1783891853290
+    },
+    {
+      "id": "1783891927908221",
+      "catId": "personal",
+      "amount": 12.21,
+      "note": "amazon cc",
+      "date": "2026-07-10",
+      "seq": 1783891927908
+    },
+    {
+      "id": "1783891983470994",
+      "catId": "transport",
+      "amount": 8.5,
+      "note": "caltrain from lucas",
+      "date": "2026-07-11",
+      "seq": 1783891983470
+    },
+    {
+      "id": "1783892005381690",
+      "catId": "transport",
+      "amount": 9.12,
+      "note": "uber from caltrain to apt",
+      "date": "2026-07-11",
+      "seq": 1783892005381
+    },
+    {
+      "id": "1783892019515546",
+      "catId": "eatingout",
+      "amount": 17.11,
+      "note": "tacos @ lucas'",
+      "date": "2026-07-11",
+      "seq": 1783892019515
+    },
+    {
+      "id": "1783892044996721",
+      "catId": "eatingout",
+      "amount": 31.82,
+      "note": "cachapa lunch",
+      "date": "2026-07-11",
+      "seq": 1783892044996
+    },
+    {
+      "id": "1783892057615337",
+      "catId": "transport",
+      "amount": 6.07,
+      "note": "uber to lucas' from sar's",
+      "date": "2026-07-10",
+      "seq": 1783892057615
+    },
+    {
+      "id": "1783892074453554",
+      "catId": "eatingout",
+      "amount": 32.56,
+      "note": "dinner w/ sar",
+      "date": "2026-07-10",
+      "seq": 1783892074453
+    },
+    {
+      "id": "1783892087761776",
+      "catId": "transport",
+      "amount": 2.85,
+      "note": "train to sar",
+      "date": "2026-07-10",
+      "seq": 1783892087761
+    },
+    {
+      "id": "1783892155181388",
+      "catId": "subs",
+      "amount": 6.21,
+      "note": "hbo max",
+      "date": "2026-07-09",
+      "seq": 1783892155181
+    },
+    {
+      "id": "178389222740788",
+      "catId": "personal",
+      "amount": 32,
+      "note": "parking ticket miami",
+      "date": "2026-07-07",
+      "seq": 1783892227407
+    },
+    {
+      "id": "1783892248028729",
+      "catId": "groceries",
+      "amount": 42.12,
+      "note": "trader joe's weekly",
+      "date": "2026-07-06",
+      "seq": 1783892248028
+    },
+    {
+      "id": "1783892266380116",
+      "catId": "personal",
+      "amount": 4.93,
+      "note": "cvs, ziploc bags",
+      "date": "2026-07-06",
+      "seq": 1783892266380
+    },
+    {
+      "id": "178427309207474",
+      "catId": "groceries",
+      "amount": 41.28,
+      "note": "groceries run whole foods",
+      "date": "2026-07-16",
+      "seq": 1784273092074
+    },
+    {
+      "id": "1784273190274355",
+      "catId": "groceries",
+      "amount": 65.75,
+      "note": "trader joe’s weekly groceries",
+      "date": "2026-07-12",
+      "seq": 1784273190274
+    },
+    {
+      "id": "1784612319360944",
+      "catId": "eatingout",
+      "amount": 24.27,
+      "note": "chinese food with friends",
+      "date": "2026-07-19",
+      "seq": 1784612319360
+    },
+    {
+      "id": "1784612336546502",
+      "catId": "subs",
+      "amount": 22.62,
+      "note": "netflix subscription",
+      "date": "2026-07-20",
+      "seq": 1784612336546
+    },
+    {
+      "id": "1784612363633512",
+      "catId": "eatingout",
+      "amount": 7.01,
+      "note": "starbucks at safeway",
+      "date": "2026-07-18",
+      "seq": 1784612363633
+    },
+    {
+      "id": "1784612381074788",
+      "catId": "eatingout",
+      "amount": 5.38,
+      "note": "gas station snacks",
+      "date": "2026-07-18",
+      "seq": 1784612381074
+    },
+    {
+      "id": "1784612420287888",
+      "catId": "eatingout",
+      "amount": 8.75,
+      "note": "popcorn at movies",
+      "date": "2026-07-17",
+      "seq": 1784612420287
+    },
+    {
+      "id": "178461243904294",
+      "catId": "trips",
+      "amount": 54.59,
+      "note": "gas for tahoe",
+      "date": "2026-07-19",
+      "seq": 1784612439042
+    },
+    {
+      "id": "1784618394459170",
+      "catId": "personal",
+      "amount": 70.25,
+      "note": "amazon order (personal items)",
+      "date": "2026-07-20",
+      "seq": 1784618394459
+    },
+    {
+      "id": "1784619606494188",
+      "catId": "trips",
+      "amount": 43.25,
+      "note": "camping reservation",
+      "date": "2026-07-17",
+      "seq": 1784619606494
+    },
+    {
+      "id": "1784620329211760",
+      "catId": "subs",
+      "amount": 8.22,
+      "note": "amazon prime subscription",
+      "date": "2026-07-21",
+      "seq": 1784620329211
+    },
+    {
+      "id": "1784646641097294",
+      "catId": "trips",
+      "amount": 16,
+      "note": "movie ticket",
+      "date": "2026-07-17",
+      "seq": 1784646641097
+    },
+    {
+      "id": "1784822965656884",
+      "catId": "eatingout",
+      "amount": 50,
+      "note": "burger @ alpine + entrance to filoli",
+      "date": "2026-07-19",
+      "seq": 1784822965656
+    },
+    {
+      "id": "1784822986990908",
+      "catId": "groceries",
+      "amount": 66.31,
+      "note": "trader joes weekly",
+      "date": "2026-07-22",
+      "seq": 1784822986990
+    },
+    {
+      "id": "17851392491955",
+      "catId": "eatingout",
+      "amount": 29.5,
+      "note": "din w ana gia chloe",
+      "date": "2026-07-23",
+      "seq": 1785139249195
+    },
+    {
+      "id": "1785139388356964",
+      "catId": "transport",
+      "amount": 7.97,
+      "note": "uber to din w gassy",
+      "date": "2026-07-24",
+      "seq": 1785139388356
+    },
+    {
+      "id": "1785139432460551",
+      "catId": "transport",
+      "amount": 5.5,
+      "note": "uber to pre (lucas g’)",
+      "date": "2026-07-24",
+      "seq": 1785139432460
+    },
+    {
+      "id": "1785139447992396",
+      "catId": "subs",
+      "amount": 4.99,
+      "note": "uber one subscription",
+      "date": "2026-07-24",
+      "seq": 1785139447992
+    },
+    {
+      "id": "1785139486566219",
+      "catId": "transport",
+      "amount": 7.21,
+      "note": "uber to caltrain from lucas",
+      "date": "2026-07-25",
+      "seq": 1785139486566
+    },
+    {
+      "id": "178513950125366",
+      "catId": "transport",
+      "amount": 8.5,
+      "note": "caltrain home",
+      "date": "2026-07-25",
+      "seq": 1785139501253
+    },
+    {
+      "id": "1785139512177257",
+      "catId": "trips",
+      "amount": 36,
+      "note": "gas to tahoe",
+      "date": "2026-07-25",
+      "seq": 1785139512177
+    },
+    {
+      "id": "178513954578845",
+      "catId": "subs",
+      "amount": 9.99,
+      "note": "apple subscription",
+      "date": "2026-07-26",
+      "seq": 1785139545788
+    },
+    {
+      "id": "1785139566727831",
+      "catId": "eatingout",
+      "amount": 1.63,
+      "note": "monday lunch",
+      "date": "2026-07-27",
+      "seq": 1785139566727
+    },
+    {
+      "id": "1785139582995783",
+      "catId": "fun",
+      "amount": 20,
+      "note": "beer @ bar",
+      "date": "2026-07-24",
+      "seq": 1785139582995
+    },
+    {
+      "id": "1785139604372151",
+      "catId": "eatingout",
+      "amount": 13,
+      "note": "tacos w gaston n mikey",
+      "date": "2026-07-24",
+      "seq": 1785139604372
+    },
+    {
+      "id": "1785139687867392",
+      "catId": "transport",
+      "amount": 5.5,
+      "note": "caltrain parking",
+      "date": "2026-07-24",
+      "seq": 1785139687867
+    }
+  ],
+  "money": {
+    "cash": 8.3,
+    "savings": 1612.33,
+    "debt": 0,
+    "limit": 4000,
+    "paycheck": 1800,
+    "toChase": 892
+  }
+}
