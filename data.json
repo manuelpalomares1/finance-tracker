@@ -580,6 +580,14 @@
       "note": "uber to caltrain from lucas",
       "date": "2026-07-25",
       "seq": 1785139486566
+    },
+    {
+      "id": "178513950125366",
+      "catId": "transport",
+      "amount": 8.5,
+      "note": "caltrain home",
+      "date": "2026-07-25",
+      "seq": 1785139501253
     }
   ],
   "money": {
