@@ -18,7 +18,7 @@
     {
       "id": "eatingout",
       "label": "Eating Out",
-      "budget": 600
+      "budget": 580
     },
     {
       "id": "trips",
@@ -33,7 +33,7 @@
     {
       "id": "personal",
       "label": "Personal",
-      "budget": 180
+      "budget": 200
     },
     {
       "id": "fun",
