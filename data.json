@@ -548,6 +548,14 @@
       "note": "din w ana gia chloe",
       "date": "2026-07-23",
       "seq": 1785139249195
+    },
+    {
+      "id": "1785139388356964",
+      "catId": "transport",
+      "amount": 7.97,
+      "note": "uber to din w gassy",
+      "date": "2026-07-24",
+      "seq": 1785139388356
     }
   ],
   "money": {
