@@ -641,6 +641,14 @@
       "note": "caltrain parking",
       "date": "2026-07-24",
       "seq": 1785139687867
+    },
+    {
+      "id": "1785175635536422",
+      "catId": "fun",
+      "amount": 40,
+      "note": "entrance to filoli",
+      "date": "2026-07-19",
+      "seq": 1785175635536
     }
   ],
   "money": {
