@@ -3,12 +3,12 @@
     {
       "id": "carexp",
       "label": "Car Expenses",
-      "budget": 350
+      "budget": 300
     },
     {
       "id": "transport",
       "label": "Transportation",
-      "budget": 150
+      "budget": 200
     },
     {
       "id": "groceries",
