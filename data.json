@@ -564,6 +564,14 @@
       "note": "uber to pre (lucas g’)",
       "date": "2026-07-24",
       "seq": 1785139432460
+    },
+    {
+      "id": "1785139447992396",
+      "catId": "subs",
+      "amount": 4.99,
+      "note": "uber one subscription",
+      "date": "2026-07-24",
+      "seq": 1785139447992
     }
   ],
   "money": {
