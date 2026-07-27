@@ -588,6 +588,14 @@
       "note": "caltrain home",
       "date": "2026-07-25",
       "seq": 1785139501253
+    },
+    {
+      "id": "1785139512177257",
+      "catId": "trips",
+      "amount": 36,
+      "note": "gas to tahoe",
+      "date": "2026-07-25",
+      "seq": 1785139512177
     }
   ],
   "money": {
