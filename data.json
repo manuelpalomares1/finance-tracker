@@ -657,6 +657,14 @@
       "note": "chickfila",
       "date": "2026-07-31",
       "seq": 1785484972544
+    },
+    {
+      "id": "1785484985022614",
+      "catId": "carexp",
+      "amount": 80.59,
+      "note": "gas full tank",
+      "date": "2026-07-31",
+      "seq": 1785484985023
     }
   ],
   "money": {
