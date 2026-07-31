@@ -3,7 +3,7 @@
     {
       "id": "carexp",
       "label": "Car Expenses",
-      "budget": 300
+      "budget": 350
     },
     {
       "id": "transport",
@@ -13,7 +13,7 @@
     {
       "id": "groceries",
       "label": "Groceries",
-      "budget": 850
+      "budget": 800
     },
     {
       "id": "eatingout",
