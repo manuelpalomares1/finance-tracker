@@ -649,6 +649,14 @@
       "note": "entrance to filoli",
       "date": "2026-07-19",
       "seq": 1785175635536
+    },
+    {
+      "id": "178548497254499",
+      "catId": "eatingout",
+      "amount": 10.32,
+      "note": "chickfila",
+      "date": "2026-07-31",
+      "seq": 1785484972544
     }
   ],
   "money": {
