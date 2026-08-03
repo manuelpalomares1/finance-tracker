@@ -673,6 +673,14 @@
       "note": "miami flight (1 of 3 charges)",
       "date": "2026-08-03",
       "seq": 1785783900170
+    },
+    {
+      "id": "1785783916999203",
+      "catId": "subs",
+      "amount": 1.99,
+      "note": "google sub",
+      "date": "2026-08-03",
+      "seq": 1785783916999
     }
   ],
   "money": {
