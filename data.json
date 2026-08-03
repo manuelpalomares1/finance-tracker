@@ -665,6 +665,14 @@
       "note": "gas full tank",
       "date": "2026-07-31",
       "seq": 1785484985023
+    },
+    {
+      "id": "1785783900170391",
+      "catId": "trips",
+      "amount": 105.24,
+      "note": "miami flight (1 of 3 charges)",
+      "date": "2026-08-03",
+      "seq": 1785783900170
     }
   ],
   "money": {
