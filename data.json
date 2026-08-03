@@ -713,6 +713,14 @@
       "note": "community goods",
       "date": "2026-08-01",
       "seq": 1785784072270
+    },
+    {
+      "id": "1785784085135441",
+      "catId": "eatingout",
+      "amount": 19.99,
+      "note": "erewhon lunch",
+      "date": "2026-08-01",
+      "seq": 1785784085135
     }
   ],
   "money": {
