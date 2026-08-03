@@ -705,6 +705,14 @@
       "note": "snacks during trip",
       "date": "2026-08-01",
       "seq": 1785784055458
+    },
+    {
+      "id": "178578407227043",
+      "catId": "eatingout",
+      "amount": 8.85,
+      "note": "community goods",
+      "date": "2026-08-01",
+      "seq": 1785784072270
     }
   ],
   "money": {
