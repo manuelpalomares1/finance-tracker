@@ -681,6 +681,14 @@
       "note": "google sub",
       "date": "2026-08-03",
       "seq": 1785783916999
+    },
+    {
+      "id": "1785783926319441",
+      "catId": "carexp",
+      "amount": 48,
+      "note": "august parking",
+      "date": "2026-08-01",
+      "seq": 1785783926319
     }
   ],
   "money": {
