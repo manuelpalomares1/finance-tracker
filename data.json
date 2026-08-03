@@ -689,6 +689,14 @@
       "note": "august parking",
       "date": "2026-08-01",
       "seq": 1785783926319
+    },
+    {
+      "id": "1785784043750260",
+      "catId": "trips",
+      "amount": 8.98,
+      "note": "snacks during trip",
+      "date": "2026-08-01",
+      "seq": 1785784043750
     }
   ],
   "money": {
