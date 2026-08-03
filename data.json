@@ -721,6 +721,14 @@
       "note": "erewhon lunch",
       "date": "2026-08-01",
       "seq": 1785784085135
+    },
+    {
+      "id": "1785784100135929",
+      "catId": "trips",
+      "amount": 7.81,
+      "note": "snacks during trip",
+      "date": "2026-08-02",
+      "seq": 1785784100135
     }
   ],
   "money": {
