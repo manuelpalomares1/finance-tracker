@@ -729,6 +729,14 @@
       "note": "snacks during trip",
       "date": "2026-08-02",
       "seq": 1785784100135
+    },
+    {
+      "id": "1785784116965223",
+      "catId": "eatingout",
+      "amount": 5.76,
+      "note": "lunch @ work tue",
+      "date": "2026-08-03",
+      "seq": 1785784116965
     }
   ],
   "money": {
