@@ -13,7 +13,7 @@
     {
       "id": "groceries",
       "label": "Groceries",
-      "budget": 700
+      "budget": 750
     },
     {
       "id": "eatingout",
@@ -23,7 +23,7 @@
     {
       "id": "trips",
       "label": "Trips",
-      "budget": 320
+      "budget": 370
     },
     {
       "id": "subs",
