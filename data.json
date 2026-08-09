@@ -825,6 +825,14 @@
       "note": "uber from train",
       "date": "2026-08-08",
       "seq": 1786245739813
+    },
+    {
+      "id": "1786245747998108",
+      "catId": "transport",
+      "amount": 8.5,
+      "note": "caltrain home",
+      "date": "2026-08-08",
+      "seq": 1786245747998
     }
   ],
   "money": {
