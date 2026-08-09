@@ -809,6 +809,14 @@
       "note": "brunch - morning due's",
       "date": "2026-08-08",
       "seq": 1786245721056
+    },
+    {
+      "id": "1786245732603316",
+      "catId": "transport",
+      "amount": 7.58,
+      "note": "lime ride to train",
+      "date": "2026-08-08",
+      "seq": 1786245732603
     }
   ],
   "money": {
