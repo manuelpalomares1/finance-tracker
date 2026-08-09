@@ -801,6 +801,14 @@
       "note": "uber to bar",
       "date": "2026-08-07",
       "seq": 1786245701301
+    },
+    {
+      "id": "1786245721056950",
+      "catId": "transport",
+      "amount": 18.74,
+      "note": "brunch - morning due's",
+      "date": "2026-08-08",
+      "seq": 1786245721056
     }
   ],
   "money": {
