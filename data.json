@@ -793,6 +793,14 @@
       "note": "popcorn at movies",
       "date": "2026-08-05",
       "seq": 1786245683844
+    },
+    {
+      "id": "1786245701301794",
+      "catId": "transport",
+      "amount": 14.73,
+      "note": "uber to bar",
+      "date": "2026-08-07",
+      "seq": 1786245701301
     }
   ],
   "money": {
