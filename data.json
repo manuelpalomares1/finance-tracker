@@ -817,6 +817,14 @@
       "note": "lime ride to train",
       "date": "2026-08-08",
       "seq": 1786245732603
+    },
+    {
+      "id": "1786245739813628",
+      "catId": "transport",
+      "amount": 9.58,
+      "note": "uber from train",
+      "date": "2026-08-08",
+      "seq": 1786245739813
     }
   ],
   "money": {
