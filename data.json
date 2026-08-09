@@ -777,6 +777,14 @@
       "note": "trader joe's weekly",
       "date": "2026-08-06",
       "seq": 1786245648611
+    },
+    {
+      "id": "1786245663401969",
+      "catId": "groceries",
+      "amount": 19.86,
+      "note": "whole foods",
+      "date": "2026-08-06",
+      "seq": 1786245663401
     }
   ],
   "money": {
