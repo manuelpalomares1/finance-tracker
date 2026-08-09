@@ -769,6 +769,14 @@
       "note": "lime ride",
       "date": "2026-08-08",
       "seq": 1786245636778
+    },
+    {
+      "id": "178624564861187",
+      "catId": "groceries",
+      "amount": 44.72,
+      "note": "trader joe's weekly",
+      "date": "2026-08-06",
+      "seq": 1786245648611
     }
   ],
   "money": {
