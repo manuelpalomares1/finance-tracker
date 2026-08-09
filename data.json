@@ -8,12 +8,12 @@
     {
       "id": "transport",
       "label": "Transportation",
-      "budget": 200
+      "budget": 250
     },
     {
       "id": "groceries",
       "label": "Groceries",
-      "budget": 700
+      "budget": 650
     },
     {
       "id": "eatingout",
