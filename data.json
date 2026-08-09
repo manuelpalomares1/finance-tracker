@@ -785,6 +785,14 @@
       "note": "whole foods",
       "date": "2026-08-06",
       "seq": 1786245663401
+    },
+    {
+      "id": "17862456838446",
+      "catId": "fun",
+      "amount": 15.05,
+      "note": "popcorn at movies",
+      "date": "2026-08-05",
+      "seq": 1786245683844
     }
   ],
   "money": {
