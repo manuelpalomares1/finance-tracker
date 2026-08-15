@@ -841,6 +841,14 @@
       "note": "anthropic monthly",
       "date": "2026-07-29",
       "seq": 1786782882964
+    },
+    {
+      "id": "1786783095250102",
+      "catId": "subs",
+      "amount": 6.21,
+      "note": "hbo max",
+      "date": "2026-08-09",
+      "seq": 1786783095250
     }
   ],
   "money": {
