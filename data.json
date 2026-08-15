@@ -857,6 +857,14 @@
       "note": "donation a samuel",
       "date": "2026-08-10",
       "seq": 1786783114302
+    },
+    {
+      "id": "1786783161576248",
+      "catId": "eatingout",
+      "amount": 16.69,
+      "note": "chickfila",
+      "date": "2026-08-12",
+      "seq": 1786783161576
     }
   ],
   "money": {
