@@ -18,12 +18,12 @@
     {
       "id": "eatingout",
       "label": "Eating Out",
-      "budget": 550
+      "budget": 500
     },
     {
       "id": "trips",
       "label": "Trips",
-      "budget": 350
+      "budget": 400
     },
     {
       "id": "subs",
