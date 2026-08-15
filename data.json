@@ -833,6 +833,14 @@
       "note": "caltrain home",
       "date": "2026-08-08",
       "seq": 1786245747998
+    },
+    {
+      "id": "1786782882964125",
+      "catId": "subs",
+      "amount": 20,
+      "note": "anthropic monthly",
+      "date": "2026-07-29",
+      "seq": 1786782882964
     }
   ],
   "money": {
